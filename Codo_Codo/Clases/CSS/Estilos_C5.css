@@ -1,0 +1,76 @@
+/*
+Aca se comenta con esto 
+*/
+
+* {
+    background-color: azure;        /* Con * Selecciono todo por defecto */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+#primeraparte {
+    p {
+        color: blue;
+        background-color: lavender;
+    }
+    
+    h2 {        /* Selector por tipo */
+        color: blue;
+        background-color: wheat;
+        margin-left: 5%;
+        padding: 10px;
+    }
+    
+    h3 {
+        margin-left: 10%;
+        color: wheat;
+        background-color: blue;
+    }
+    
+    .tamano {       /*  CLASE 1 o mas */
+        font-size: 20px;
+        font-weight: bolder;
+        font-style: italic;
+        background-color: bisque;
+        color: red;
+    }
+    
+    #resumen {      /* ID exclusivamente uno solo */
+        font-size: 75%;
+        background-color: rgb(248, 113, 153);
+        color: white;
+    }
+    
+    span {      /* Elemento que permite modificar parte del texro */
+        background-color: rgb(125, 125, 125);
+        color: white;
+    }
+    
+    #unico {
+        background-color: black;
+        color: white;
+    }
+    
+    .fondorojo {        /* Elemento que permite separar/modificar en bloque */
+        background-color: red;
+        color: white;
+    }
+}
+
+#segundaparte {
+    h2 {
+        color: green /*!important*/;
+        background-color: aquamarine;
+    }
+    
+    .clase {
+        color: red;
+        background-color: aqua;
+    }
+
+    #id {
+        color: blue;
+        background-color: brown;
+    }
+
+}

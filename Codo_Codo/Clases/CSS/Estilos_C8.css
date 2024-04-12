@@ -1,0 +1,106 @@
+#selectoresAvz{
+    h2, h3, p {     /* Agrupa - Ahorra codigo */
+        color: red;
+    }
+
+    p {
+        background-color: blanchedalmond;
+    }
+
+    div p {         /* todos los <p> decendientes de <div> sea o no hijo directo - en este caso se presentan dos <p> dentro del <div> */
+        color: yellowgreen;
+    }
+
+    div > p {       /* Todos los <p> hijos directos de <div> - en este caso solo se presenta un <p> */
+        background-color: grey;
+    }
+
+    h3 + p {        /* Todos los p adyacentes de h3 - si fuese al revez, p+h3, en mi codigo no existe */
+        color: white;
+        background-color: brown;
+    }
+
+    h3 ~ p {        /* Hermanos, que esten en la misma linea de codigo vertical, lo que este por encima de h3 no cuenta, solo debajo */
+        color: violet;
+    }
+}
+
+#pseudo {
+    p:first-child {         /* (Decendencia de id=pseudo) El primer hijo del padre */
+        color: aqua;
+    }
+
+    p:last-child {          /* El ultimo hijo del padre */
+        color: white;
+    }
+}
+.ListaEjemplo {
+    li:first-child {      /* (Decendencia de ListaEj) El primer hijo del padre */ 
+        color: red;
+    }
+
+    li:nth-child(17) {    /* Seleccionno el hijo que quiero modificar */
+        color: red;
+    }
+
+    li:nth-child(2n) {    /* Selecciono cada 2 hijos */
+        color: blue;
+    }
+
+    li:nth-child(5n+10) { /* Selecciono cada 5 hijos A PARTIR del decimo hijo */
+        color: chocolate;
+    }
+    li:nth-child(odd) {   /* Con (odd) para solamente impares */
+        background-color: antiquewhite;
+    }
+
+    li:nth-child(even) {  /* Con (even) para solamente pares */
+        background-color: cornsilk;
+    }
+}
+
+#hipervinculos{
+    a:link {             /* se refiere a un enlace que todavía no ha sido visitado */
+        border: 1px black solid;
+        background-color: gray;
+        color: black;
+        padding: 5px;
+    }
+    
+    a:hover {            /* se refiere a un elemento sobre el que se coloca el puntero del mouse */
+        border: 1px blue solid;
+        color: blue;
+    }
+
+    a:visited {          /* se refiere a un enlace que ya ha sido visitado */
+        border: 1px red solid;
+        background-color: burlywood;
+        color: red;
+    }
+
+    a:active {           /* se refiere a cualquier elemento que ha sido activado por el usuario */
+        border-end-end-radius: 1px green solid;
+        background-color: lightgreen;
+        color: green;
+    }
+}
+
+#pseudoelementos {
+    p::first-letter {   /* se utiliza para darle estilo a la primera letra de un texto */
+        color: red;
+        font-weight: bold;
+    }
+
+    p::first-line {
+        background-color: lightcyan;
+        font-weight: bold;
+    }
+
+    p::selection {      /* agrega estilos a una parte del documento que ha sido resaltada por el usuario */
+        background-color: lightgreen;
+        color: green;
+    }
+
+    p::before {content: "Inicio de parrafo - "}     /* Agrega contenido antes del content */
+    p::after {content: " <3"}                       /* Agrega contendio despues del content */
+}

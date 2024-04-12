@@ -1,0 +1,57 @@
+#BoxUno{
+    * {
+        margin:0px;
+    }
+
+    h1 {
+        margin: 30px;
+        background-color: lightpink;
+    }
+
+    div {
+        background-color: lightblue;
+        padding: 10px 10px;       /* poniendo 1px se le suma el margen */
+        height: 400px;
+        overflow: scroll;     /* Desbordamiento */
+    }
+
+    p {
+        margin: 10px;
+        background-color: aquamarine;
+        padding: 10px;
+    }
+
+    .boxmodel {
+        background-color: beige;
+    }
+}
+
+#BoxDos{
+    * {
+        margin:0px;
+    }
+
+    h1 {
+        background-color: lightpink;
+        border: 5px solid green;
+    }
+
+    div {
+        background-color: lightblue;
+        padding: 10px;
+        min-width: 700px;   /* Se adapta a la pantalla si achico o agrando la ventana */
+    }
+
+    p {
+        background-color: aquamarine;
+        margin: 20px;
+        padding: 30px 10px;     /* = padding-top y padding bottom 30px, padding-left y padding-right 10px */
+        border-color: blue red;
+        border-width: 5px 10px 1px;
+        border-style: solid;
+    }
+
+    .boxmodel {
+        background-color: beige;
+    }
+}

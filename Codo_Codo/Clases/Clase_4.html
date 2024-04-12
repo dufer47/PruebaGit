@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4</title>
+</head>
+<body>
+    <hr><h2>Formularios</h2>
+
+    <form action="./Clase_4_submit.html" target="_blank">
+
+        <label for="nom">Nombre</label> <!--Con el for hago el al apretar en Apellido, el cursor se coloque dentro del campo a completar (Tiene que ser igual el for=id)-->
+        <input type="text" name="nombre" id="nom" value="Sin Nombre" maxlength="10"><br><br> <!--Maxlength indica el maximo de caracteres que se pueden colocar-->
+
+        <label for="nom2">Segundo Nombre</label>
+        <input type="text" name="segundo nombre" id="nom2" value="Sin dato" size="20"><br><br> <!--Size marca la cantidad de caracteres q se pueden ver dentro del campo (visual)-->
+
+        <label for="nom">Apodo</label>  <!--Placeholder coloca una leyenda con 'instrucciones'-->
+        <input type="text" name="apodo" id="apo" minlength="3" placeholder="Complete su apodo"><br><br> <!--Minlength indica el minimo de caracteres que se pueden colocar-->
+
+        <label for="ape">Apellido</label>
+        <input type="text" name="apellido" id="ape" value="Sin Apellido" required><br><br>  <!--Required es campo obligatorio-->
+
+        <label for="tel">Telefono</label>
+        <input type="number" name="telefono" id="tel" value="Sin datos" size="15"><br><br> <!--Con value ponemos un valor que se muestre si no se completo el dato-->
+
+        <label for="documento">DNI</label>
+        <input type="number" name="DNI" id="documento" value="Sin datos" min="30000000" max="50000000"><br><br> <!--Min y Max indician el rango que debo colocar dentro del campo-->
+
+        <label for="fc">Fecha de Nacimiento</label>
+        <input type="date" name="fecha de Nacimiento" id="fc" required><br><br>
+
+        <label for="pass">Contraseña</label>
+        <input type="password" name="password" id="pass" required><br><br>
+    
+    <fieldset>  <!--Fieldset me marca en un recuadro lo seleccionado-->
+        <legend>Campos Obligatorios</legend>    <!--Legend es un 'titulo' al recuadro de fieldset-->
+
+        <label for="conoc">Conocimientos previos</label>    <!--Para que funcione como unidad, cada input debe tener el mismo valor en name-->
+        <input type="checkbox" name="conocimientos" id="conoc" checked> Python  <!--Checked coloca automaticamente un valor predeterminado-->
+        <input type="checkbox" name="conocimientos" id="conoc"> CSS
+        <input type="checkbox" name="conocimientos" id="conoc"> HTML
+        <input type="checkbox" name="conocimientos" id="conoc"> JS <br><br>
+
+        <label for="turno">Turnos</label>
+        <input type="radio" name="turno" id="turno" checked> Mañana
+        <input type="radio" name="turno" id="turno"> Tarde
+        <input type="radio" name="turno" id="turno"> Noche <br><br>
+
+        <select name="horario" id="hora">
+            <option value="">Mañana</option>
+            <option value="">Tarde</option>
+            <option value="">Vespertino</option>
+            <option value="">Noche</option>
+        </select> <br><br>
+
+    </fieldset><br><br>
+
+    <fieldset>
+        <legend>Observaciones</legend>
+
+        <textarea name="Observaciones" id="" cols="30" rows="3" placeholder="Indicanos cual es tu duda"></textarea>
+
+    </fieldset><br><br>
+
+        <input type="reset" value="Borrar Datos">
+        <input type="submit" value="Enviar Datos">
+
+    </form>
+</body>
+</html>

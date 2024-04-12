@@ -1,0 +1,46 @@
+#primeraparte {
+    .tamano1 {font-size: 1em;}     /* 16px y 1em son =, predeterminado */
+    .tamano2 {font-size: 0.5cm;}
+    .tamano3 {font-size: 1.3em;}
+
+    :root {font-size: 20px;}    /* Maximo indicador de todo */
+    .tamano4 {font-size: 1.3rem;}
+    .tamano5 {font-size: 0.8rem;}
+}
+#segundaparte {
+    .tamano6 {font-size: 3vw;}
+    .tamano7 {font-size: 2.5vw;}
+    .tamano8 {font-size: 1.5vh;}
+}
+
+.fondo {
+    background-color: aqua;
+    text-align: center;
+    border-color: red blue;
+    border-width: 7px;
+    border-style: double groove;
+    margin: 10px;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    color: slategray;
+}
+
+.fondofoto {
+    background-image: url(../Ejemplos/Img/Fondo.jpeg);
+    border: 5px solid yellow;      /* Aatajo grosor - estilo - color */
+    text-align: center;
+    background-size: cover;     /* Amplifica mi imagen al total del contenedor */
+    padding: 30px 20px;     /* Atajo top/bottom px      left/right px       // Otros atajos va de sentido horario */
+    margin: 1px;    /* General */
+    margin-top: 15px;       /*left y right */
+    margin-bottom: 15px;
+}
+
+.textofoto {
+    background-color: rgba(255, 255, 255, 0.541);
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5px;
+    margin: 3px;
+}
