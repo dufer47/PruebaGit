@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pseudoelementos.css">
+    <title>Pseudoelementos</title>
+</head>
+
+<body>
+    <h1>Pseudoelementos</h1>
+    <p>Un pseudoelemento en CSS es un término utilizado para describir una parte específica de un elemento HTML que puede ser seleccionada y estilizada independientemente del contenido real del elemento. Los pseudoelementos se crean utilizando <b>dos puntos dobles (::) </b> seguidos de un nombre específico, como <b>::before</b> o <b> ::after</b>. Los pseudoelementos permiten agregar contenido o estilos a partes de un elemento HTML sin tener que modificar el marcado HTML real.</p>
+
+    <div class="contenedor-ejemplos">
+        <div class="subcontenedor-ejemplos">
+            <p><b>::first-letter</b> se utiliza para darle estilo a la primera letra de un texto.</p>
+            <p class="ej1">Párafo con la primera letra modificada.</p>
+            <p class="ej1">Párafo con la primera letra modificada.</p>
+            <p class="ej1">Párafo con la primera letra modificada.</p>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <p><b>::first-line</b> se utiliza para darle estilo a la primera línea de un párrafo.</p>
+            <p class="ej2">La pseudoclase :first-line en CSS se utiliza para seleccionar y aplicar estilos específicos a la primera línea de texto dentro de un elemento.</p>
+            <p class="ej2">Esta pseudoclase permite estilizar la primera línea de un bloque de texto de manera independiente, lo que puede ser útil para crear efectos tipográficos o de diseño específicos para esa parte del contenido.</p>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <p><b>::selection</b> agrega estilos a una parte del documento que ha sido resaltada por el usuario.</p>
+            <p class="ej3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam optio recusandae incidunt velit hic inventore voluptate saepe ipsum reiciendis dicta?</p>
+            <p><b>Nota:</b> Seleccione una porción de texto del párrafo de arriba para ver el efecto.</p>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <p><b>::before</b> agrega contenido antes de un elemento. <br>
+                <b>::after</b> agrega contenido después de un elemento.</p>
+            <p class="ej4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam optio recusandae incidunt velit hic inventore voluptate saepe ipsum reiciendis dicta?</p>
+        </div>
+    </div>
+</body>
+
+</html>

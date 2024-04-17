@@ -1,0 +1,25 @@
+h2, h3 {
+    color: blue;
+}
+
+h2 {
+    background-color: lightblue;
+}
+
+p::first-letter {
+    color: red;
+    background-color: pink;
+    font-size: 38px;
+}
+
+p::selection {
+    background-color: lightgreen;
+    color: red;
+}
+
+p::before { content: "🔴"}
+p::after { content: "😀"}
+
+
+
+

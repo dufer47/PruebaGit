@@ -1,0 +1,107 @@
+*{font-family: Verdana;}
+h2{border-bottom: 1px solid blue; padding: 5px;}
+.caja {
+    width: 100px;
+    height: 100px;
+    border: 2px solid blue;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.contenedor-ejemplos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.subcontenedor-ejemplos{
+    padding: 10px;
+    border-left: 1px solid black;
+}
+
+.contenedor-ejemplos2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/*---------------------------------------------------*/
+
+/*------------- TRANSICIONES -------------*/
+
+ .enlace1 {
+    text-decoration: none;
+    background: lightblue;
+    color: blue;
+    padding: 2px;
+    border: 1px solid blue;
+}
+
+.enlace1:hover {
+    background: pink;
+    color: darkred;
+    padding: 8px 14px;
+    border: 3px solid darkred;
+
+    transition-property: all; /*Especifico que quiero modificar todas las propiedades*/
+    transition-duration: 2s; /*con una duración de 2s*/
+    transition-timing-function: ease-in; /*Controla el tiempo de entrada y salida*/
+                                        /*ease-in: arranca más lento
+                                        ease-out: termina más lento
+                                        ease-in-out: arranca y termina más lento*/
+
+}
+
+.enlace2 {
+    text-decoration: none;
+    background: lightgreen;
+    color: green;
+    padding: 2px;
+    border: 1px solid green;
+
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
+    
+    /*Atajo: Transiciones */
+    /* transition: all 0.2s ease-out; */
+}
+
+.enlace2:hover {
+    background: pink;
+    color: darkred;
+    padding: 8px 14px;
+    border: 3px solid darkred;
+}
+
+.div-transicion {
+    width: 100px; /*Ancho inicial*/
+    height: 100px;
+    background-color: lightblue;
+    color: blue;
+    transition: all 2s linear;
+}
+
+.div-transicion:hover {
+    width: 100%; /*Ancho al que quiero llegar*/
+    background-color: lightgreen;
+    color: green;
+    font-size: 20px;
+}
+
+.contenedor-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.imagen{
+    width: 50%;
+    box-shadow: 5px 5px 25px black;    
+    transition: all 2s linear;
+}  
+.imagen:hover{
+    width: 70%;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    box-shadow: -10px -10px 15px rgb(150, 150, 150);    
+}

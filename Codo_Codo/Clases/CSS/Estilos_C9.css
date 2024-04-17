@@ -1,0 +1,89 @@
+#breakpoints {
+    *{font-family: Verdana;}
+    .ejemplo {
+        padding: 20px;
+        color: white;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        .ejemplo {
+            background-color: red;
+        }
+        .tamanio::before{
+            content: "La pantalla mide hasta 600 px.";
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        .ejemplo {
+            background-color: green;
+        }
+        .tamanio::before{
+            content: "La pantalla mide más de 600 px.";
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        .ejemplo {
+            background-color: blue;
+        }
+        .tamanio::before{
+            content: "La pantalla mide más de 768 px.";
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        .ejemplo {
+            background-color: orange;
+            color: black;
+        }
+        .tamanio::before{
+            content: "La pantalla mide más de 992 px.";
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        .ejemplo {
+            background-color: pink;
+            color: black;
+        }
+        .tamanio::before{
+            content: "La pantalla mide más de 1200 px.";
+        }
+    }
+}
+
+#mediaquery {
+    div {
+        background-color: lightgreen;
+        font-family: Verdana;
+    }
+    
+    /*screen: monitores o pantallas de computadora*/
+    @media only screen and (max-width: 600px){
+        /*Condición: Ancho máximo 600px, hasta 600px le aplicamos este estilo*/
+        * {
+            background-color: lightblue;
+        } 
+    }
+    
+    @media only screen and (max-width: 800px){
+        /*Condición: Ancho máximo 400px, hasta 400px le aplicamos este estilo*/
+        * {
+            background-color: lightsalmon;
+        }
+        
+    }
+    
+    @media only screen and (min-width: 800px){
+        /*Condición: Ancho mínimo 800px, desde 800px le aplicamos este estilo*/
+        * {
+            background-color: lightseagreen;
+        }
+    }
+}

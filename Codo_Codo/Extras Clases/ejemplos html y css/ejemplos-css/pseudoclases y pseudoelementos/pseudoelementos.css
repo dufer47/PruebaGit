@@ -1,0 +1,26 @@
+*{font-family: Verdana;}
+
+.caja-ejemplo{
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid black;
+    padding: 0px 10px;
+    background-color: azure;
+}
+.contenedor-ejemplos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.subcontenedor-ejemplos{
+    padding: 10px;
+    border-left: 1px solid black;
+}
+/*-------------------------------------------------------------*/
+
+/*----------- Pseudoelementos --------------*/
+
+.ej1::first-letter{color:blue;font-size: 35px;}
+.ej2::first-line{background-color: lightgreen;}
+.ej3::selection{background-color: lightsalmon;}
+.ej4::before{content:"🔴";}
+.ej4::after{content:"😀";}

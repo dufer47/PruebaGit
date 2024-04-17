@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="animaciones.css">
+    <title>Animaciones</title>
+</head>
+<body>
+    <h1>Animaciones</h1> 
+    <p>Las animaciones en CSS son una técnica que permite crear efectos de movimiento y cambio gradual en los elementos HTML utilizando propiedades de estilo y transiciones definidas en hojas de estilo. Estas animaciones permiten a los desarrolladores web controlar y coordinar visualmente los cambios en propiedades como el tamaño, la posición, el color, la opacidad y más a lo largo del tiempo. Las animaciones en CSS son útiles para mejorar la experiencia del usuario al agregar interactividad y dinamismo a una página web sin la necesidad de JavaScript o bibliotecas externas. Se definen mediante la especificación de reglas de animación que describen cómo debe comportarse un elemento en respuesta a un evento o un estado específico, como el paso del mouse, la carga de la página o una acción del usuario.</p>
+    
+    <h2>Ejemplos de animaciones</h2>
+    <div class="contenedor-ejemplos">
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 1: Animación que se ejecuta al cargar la página:</h4>
+            <div class="div-animado1">Div con animación</div>
+            <br>
+            <button id="btnRecargar">Recargar página</button>
+            <p> Este elemento utiliza una clase llamada <span style="color: blue; font-weight: bold;">.div-animado1 </span> que le aplica estilos a un elemento HTML específico. Este elemento tendrá un ancho del 100%, una altura de 50 píxeles y un color de fondo inicial de "lightsalmon". Además, se configura una animación en el elemento llamada "cambiarColor", que alterará su color de fondo de manera suave. La animación tiene una duración de 2 segundos y comienza 1 segundo después de cargar la página. La animación en sí está definida utilizando la regla @keyframes cambiarColor, que especifica que el color de fondo cambia gradualmente desde "lightblue" (estado inicial) a "gray" (estado final) a lo largo de la duración de la animación. En resumen, esta clase crea una animación que cambia el color de fondo de un elemento con efecto de retardo y duración específicos.</p>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 2: Animación que se ejecuta al cargar la página, modificando más propiedades:</h4>
+            <div class="div-animado2">Div con animación</div>
+            <p>En este caso se ha aplicado a la clase <span style="color: blue; font-weight: bold;">.div-animado2</span> a través de <span style="color: blue; font-weight: bold;">@keyframes cambiarColorTamanio </span> una animación más compleja. <br>
+            Esta animación tiene una duración de 2 segundos, se ejecuta de manera lineal y repite 3 veces. Tiene tres fotogramas diferentes a lo largo de la animación, en los cuales se modifican su color de fondo, dimensiones y borde.</p>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 3: Animaciones que desplazan elementos y se ejecutan repetidamente:</h4>
+            <div class="corazon">❤️</div>
+            <img src="carita.png" class="carita" alt="carita">
+            <p> La clase CSS <span style="color: blue; font-weight: bold;">.corazon</span> establece un tamaño de fuente de 20 píxeles y se aplica una animación llamada <b>latido</b>, que tiene una duración de 1 segundo con repetición infinita. Durante la animación, la transformación de escala hace que el elemento cambie de tamaño suavemente. En el inicio y el final de la animación (0% y 100%), el elemento tiene su tamaño original (escala 1), mientras que en el 50% de la animación, se reduce ligeramente (escala 0.95), creando un efecto de latido.</p>
+            <p>La clase CSS <span style="color: blue; font-weight: bold;">.carita</span> se utiliza para aplicar estilos a un ícono que contiene una carita sonriente, al cual se aplica una animación llamada moverYRotar. Esta animación tiene una duración de 2 segundos con una función de temporización "ease-in-out" y se repite infinitamente. La animación moverYRotar combina una transformación de traslación (translateX) para mover la carita de un lado a otro y una transformación de rotación (rotate) que hace que la carita gire 720 grados sobre su eje central durante la mitad de la animación (50%).</p>
+        </div>
+    </div>
+    <br>
+    <div class="contenedor-ejemplos2">
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 4: Animación que desplaza elementos en 4 etapas:</h4>
+            <div class="contenedor-animacion">
+                <div class="div-animado3"></div>
+            </div>
+            <p></p>
+            La clase <span style="color: blue; font-weight: bold;">.div-animado3 </span> posee un ancho y alto de 100 píxeles, color de fondo azul y una posición relativa (necesaria para controlar la posición del elemento). Además, se aplica una animación llamada <span style="color: blue; font-weight: bold;">ejemplo4</span> al elemento con una duración de 4 segundos y una repetición infinita. <br>
+            La animación se divide en cinco fotogramas clave, especificando cómo el elemento cambia de estilo a lo largo de la animación:</p>
+            <ul>
+                <li>En el inicio (0%), el elemento tiene un fondo azul y está posicionado en la esquina superior izquierda (left: 0px; top: 0px).</li>
+                <li>En el 25%, el color de fondo cambia a un tono de azul más claro, y el elemento se desplaza hacia la derecha (left: 500px), manteniéndose en la parte superior.</li>
+                <li>En el 50%, el color de fondo se aclara aún más, el elemento se desplaza hacia la derecha y hacia abajo (left: 500px; top: 200px), y se le agrega un borde redondeado (border-radius: 100%).</li>
+                <li>En el 75%, el color de fondo vuelve a un tono de azul más claro, y el elemento se desplaza hacia la izquierda (left: 0px) y hacia abajo.</li>
+                <li>Finalmente, en el 100%, el elemento regresa a su color de fondo azul original y a su posición inicial en la esquina superior izquierda.</li>
+            </ul>
+
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 5: Animaciones encadenadas:</h4>
+            <div class="contenedor-animacion">
+                <div class="div-animado4"></div>
+            </div>
+        
+            <p>Estas cuatro animaciones se aplican a un elemento HTML con la clase <span style="color: blue; font-weight: bold;">.div-animado4</span> y controlan varios aspectos de su comportamiento: </p>
+            <ul>
+                <li><b>animacion1:</b> La primera animación altera el color de fondo y la posición del elemento a lo largo de su duración de 2 segundos. Comienza con un fondo azul, se transforma en un tono de azul más claro en el 50% de la animación, y finalmente regresa al azul original. Además, el elemento se mueve desde su posición inicial (0px, 0px) hacia la derecha y hacia abajo.</li>
+                <li><b>animacion2:</b> La segunda animación aplica una transformación de escala al elemento. Inicia con una escala de 1, aumenta al 50% de la animación a 1.5 veces su tamaño original, y luego regresa a una escala de 1 al final de la animación. Esto crea un efecto de escalado del elemento.</li>
+                <li><b>animacion3:</b> La tercera animación aplica una transformación de rotación al elemento. Comienza sin rotación (0 grados), rota 180 grados al 80% de la animación y regresa a 0 grados al final. Esto produce un efecto de giro de 180 grados del elemento.</li>
+                <li><b>animacion4:</b> La cuarta animación controla la opacidad del elemento. Inicia con una opacidad completa (1) y disminuye gradualmente hasta llegar a una opacidad de 0 al final de la animación. Esto crea un efecto de desvanecimiento gradual del elemento.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const btnRecargar = document.getElementById('btnRecargar')
+        btnRecargar.addEventListener('click', function() {
+            location.reload()
+        })
+
+    </script>
+</body>
+</html>

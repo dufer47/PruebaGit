@@ -1,0 +1,27 @@
+
+.contenedor {
+    background-color: lightblue;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 100px 200px 100px;
+
+    gap: 20px;
+
+    height: 500px;
+    grid-template-rows: 100px 50px 200px;
+    grid-auto-rows: 1fr;
+    justify-content: center;
+    align-content: center;
+
+    justify-items: stretch;
+    align-items: stretch;
+
+}
+
+
+.cell {
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+    border: 1px dotted black;
+}

@@ -1,0 +1,31 @@
+* {
+    font-family: Verdana;
+}
+
+
+h1 {
+    color: blue;
+    background-color: rgba(245, 90, 113, 0.248);
+    
+}
+
+
+h2 {
+    color: green;
+    background-color: lightgreen;
+    margin-left: 20px;
+}
+
+.tamano1 {
+    font-size: 4vw;
+}
+
+.tamano2 {
+    font-size: 2vw;
+}
+
+.tamano3 {
+    font-size: 1vw;
+}
+
+

@@ -1,0 +1,59 @@
+*{font-family: Verdana;}
+p{text-align: justify;}
+.caja-ejemplo{
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid black;
+    padding: 0px 10px;
+    background-color: azure;
+}
+.imagen-ejemplo{
+    text-align: center;
+}
+
+.elemento-descendiente{
+    font-style: italic;
+}
+
+.titulo-noticia{
+    color: darkred;
+}
+/*---------------------------------------------------------------------*/
+
+/*Selector agrupado*/
+h1, h2 {
+    border-bottom: 2px solid blue;
+    background-color: lightblue;
+}
+
+/*Selector descendientes*/
+div .elemento-descendiente{
+    color: green;
+    font-weight: bold;
+    background-color: aquamarine;
+    margin: 0px 30px;
+    padding: 10px;
+    border-bottom: 1px dotted green;
+}
+
+/*Selector de hijos directos*/
+ul > li{
+    color: blueviolet;
+    background-color: lavender;
+}
+
+/*Selector de hermano adyacente*/
+h3 + p{
+    font-style: italic;
+    color: red;
+}
+
+/*Selector general de hermanos*/
+h4 ~ p{
+    padding: 10px;
+    border-bottom: 1px solid darkred;
+    border-right: 1px solid darkred;
+    box-shadow: 3px 3px 4px darkred;
+}
+
+

@@ -1,0 +1,193 @@
+* {
+    font-family: Verdana;
+}
+
+h2 {
+    border-bottom: 1px solid blue;
+    padding: 5px;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+    border: 2px solid blue;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.contenedor-ejemplos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.subcontenedor-ejemplos {
+    padding: 10px;
+    border-left: 1px solid black;
+}
+
+.contenedor-ejemplos2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*------------------------------------------------------------------*/
+/*Animación - Ejemplo 1*/
+.div-animado1 {
+    width: 100%;
+    height: 50px;
+    background-color: lightsalmon;
+    animation-name: cambiarColor;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    /*Atajo*/
+    /* animation: cambiarColor 2s 1s; */
+}
+
+@keyframes cambiarColor {
+    from {
+        background-color: lightblue;
+    }
+
+    to {
+        background-color: gray;
+    }
+}
+
+/*-----------------------------------------------------*/
+/*Animación - Ejemplo 2*/
+.div-animado2 {
+    width: 50%;
+    height: 25px;
+    background-color: lightblue;
+    border: 1px solid blue;
+    animation-name: cambiarColorTamanio;
+    /*Atajo (animation-duration animation-timing-function animation-iteration-count)*/
+    animation: cambiarColorTamanio 2s linear 3;
+}
+
+@keyframes cambiarColorTamanio {
+    /* Primer fotograma */
+    25% {
+        background-color: pink;
+        width: 75%;
+        height: 40px;
+        border: 3px solid red;
+    }
+
+    /* Segundo fotograma */
+    50% {
+        background-color: lightgreen;
+        width: 100%;
+        height: 60px;
+        border: 5px solid green;
+    }
+
+    /* Tercer fotograma */
+    75% {
+        background-color: pink;
+        width: 75%;
+        height: 40px;
+        border: 3px solid red;
+    }
+}
+/*-----------------------------------------------------*/
+/*Animación - Ejemplo 3*/
+
+.corazon{
+    font-size: 20px;
+    animation: latido 1s infinite;
+}
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1); /* Escala inicial y final */
+    }
+    50% {
+        transform: scale(0.95); /* Escala máxima en la mitad de la animación */
+    }
+}
+
+.carita {
+    font-size: 48px; /* Tamaño de la carita */
+    transform: rotate(1deg);
+    animation: moverYRotar 2s ease-in-out infinite;
+}
+
+@keyframes moverYRotar {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg); /* Posición y rotación inicial y final */
+    }
+    50% {
+        transform: translateX(200px) rotate(720deg); /* Mueve la carita hacia la derecha y gira 360 grados en la mitad de la animación */
+    }
+}
+
+/*-----------------------------------------------------*/
+/*Animación - Ejemplo 4*/
+
+.contenedor-animacion{
+    height: 300px;
+}
+
+.div-animado3 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+
+    animation: ejemplo4 4s linear infinite;
+}
+
+@keyframes ejemplo4 {
+    0%   {background-color:blue; left:0px; top:0px;}
+    25%  {background-color:rgb(100, 100, 255); left:500px; top:0px;}
+    50%  {background-color:rgb(200, 200, 255); left:500px; top:200px; border-radius: 100%;}
+    75%  {background-color:rgb(100, 100, 255); left:0px; top:200px;}
+    100% {background-color:blue; left:0px; top:0px;}
+}
+
+/*-----------------------------------------------------*/
+/*Animación - Ejemplo 5*/
+
+.div-animado4 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: blue;
+    /* animation: animacion1 4s linear infinite; */
+    animation:
+    /*name duration timing-function delay fill-mode*/
+        animacion1 2s linear 0s forwards, 
+        animacion2 2.5s linear 1s,
+        animacion3 2s linear 3.5s,
+        animacion4 2s linear 5.5s forwards;
+  }
+
+/* Define la primera animación */
+@keyframes animacion1 {
+    0%   {background-color:blue; left:0px; top:0px;}
+    50%  {background-color:rgb(100, 100, 255); left:300px; top:150px;}
+    100% {background-color:blue; left:200px; top:100px;}
+  }
+/* Define la segunda animación */
+@keyframes animacion2 {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  }
+
+/* Define la tercera animación */
+  @keyframes animacion3 {
+      0% {transform: rotate(0);}
+      80% {transform: rotate(180deg);}
+      100% {transform: rotate(0);}
+    }
+    
+/* Define la cuarta animación */
+  @keyframes animacion4 {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+

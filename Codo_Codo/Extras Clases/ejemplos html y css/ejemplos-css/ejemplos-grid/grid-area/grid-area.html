@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grid-area.css">
+    <link rel="shortcut icon" href="partes.png" type="image/x-icon">
+    <title>Grid Area</title>
+</head>
+<body>
+    <header class="encabezado">
+        <div>
+            <a href="#">
+                <img src="partes.png" alt="area">
+            </a>
+            <h1 style="display:inline;">Propiedad grid-area</h1>
+        </div>
+        <nav>
+            <div><a href="#ancla-ej1" class="enlace">Ejemplo 1</a></div>
+            <div><a href="#ancla-ej2" class="enlace">Ejemplo 2</a></div>
+            <div><a href="#ancla-ej3" class="enlace">Ejemplo 3</a></div>
+            <div><a href="#ancla-ej4" class="enlace">Ejemplo 4</a></div>
+        </nav>
+    </header>
+    <main>
+        <p> La propiedad <span style="color:blue; font-weight: bold;">grid-area</span> es una propiedad de CSS que se utiliza en el contexto de CSS Grid para asignar un nombre a un área específica de una cuadrícula. Esta propiedad se utiliza en conjunto con la propiedad <span style="color:blue; font-weight: bold;">grid-template-areas</span> para definir la estructura y la disposición de las áreas en una cuadrícula CSS Grid.</p>
+        
+        <a name="ancla-ej1"></a>
+        <h2>Ejemplo 1: un item ocupa las 5 columnas</h2>
+        <p>Puede usar la propiedad <span class="codigo">grid-area</span> para nombrar elementos de cuadrícula. <br>
+        Puede hacer referencia al nombre cuando configure el diseño de la cuadrícula, utilizando la propiedad <span class="codigo">grid-template-areas</span> en el contenedor de la cuadrícula. <br>
+        La clase item1 ocupará el lugar de las cinco columnas dentro del <span class="codigo">grid-template-areas</span>:</p>
+        <div class="grid-container1">
+            <div class="item">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+        <hr>
+
+        <a name="ancla-ej2"></a>
+        <h2>Ejemplo 2: áreas en distintas líneas</h2>
+        <p>Puede usar la propiedad <span class="codigo">grid-area</span> para nombrar elementos de cuadrícula. <br>
+        Puede hacer referencia al nombre cuando configure el diseño de la cuadrícula, utilizando la propiedad <span class="codigo">grid-template-areas</span> en el contenedor de la cuadrícula. <br>
+        En este caso, la clase <b>item1</b> tiene asignada un área llamada <b>miArea</b> que ocupará las dos primeras columnas de la izquierda, mientras que la clase <b>item5</b> ocupará las tres columnas del medio y la clase <b>item11</b> lo hará con las últimas 2 columnas de la derecha:</p>
+        <div class="grid-container2">
+            <div class="item1">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div class="item5">5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div class="item11">11</div>
+        </div>
+        <hr>
+
+        <a name="ancla-ej3"></a>
+        <h2>Ejemplo 3: área grande</h2>
+        <p>Puede usar la propiedad <span class="codigo">grid-area</span> para nombrar elementos de cuadrícula. <br>
+        Puede hacer referencia al nombre cuando configure el diseño de la cuadrícula, utilizando la propiedad <span class="codigo">grid-template-areas</span> en el contenedor de la cuadrícula. <br>
+        En este caso, la clase <b>item1</b> tiene asignada un área llamada miArea que ocupará las dos primeras columnas de la izquierda y las dos primeras filas:</p>
+        
+        <div class="grid-container3">
+            <div class="item-grande">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <hr>
+        <a name="ancla-ej4"></a>
+        <h2>Ejemplo 4: maquetado con áreas</h2>
+        <p>Puede usar la propiedad <span class="codigo">grid-area</span> para nombrar elementos de cuadrícula. <br>
+        Puede hacer referencia al nombre cuando configure el diseño de la cuadrícula, utilizando la propiedad <span class="codigo">grid-template-areas</span> en el contenedor de la cuadrícula. <br>
+        En este caso, cada clase tiene un área asignada. Las áreas están distribuidas en <b>3 filas con 6 columnas</b>:</p>
+        <ul style="margin-left: 20px;">
+            <li>La primera fila queda reservada para el encabezado (header).</li>
+            <li>La segunda fila se reparte entre el menú y el aside, a ambos lados, y el contenido principal (main) ocupando 4 columnas.</li>
+            <li>La tercera fila se reparte entre el menú y el pie (footer).</li>
+        </ul>
+        <br>
+        <div class="grid-container4">
+            <div class="item-header">Encabezado</div>
+            <div class="item-menu">Menú</div>
+            <div class="item-main">Principal</div>
+            <div class="item-aside">Aside</div>
+            <div class="item-footer">Pie</div>
+        </div>        
+</main>
+</body>
+
+</html>

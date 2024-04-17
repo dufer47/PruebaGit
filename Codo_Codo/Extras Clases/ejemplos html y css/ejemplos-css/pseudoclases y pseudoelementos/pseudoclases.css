@@ -1,0 +1,74 @@
+*{font-family: Verdana;}
+.caja-ejemplo{
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid black;
+    padding: 0px 10px;
+    background-color: azure;
+}
+.contenedor-ejemplos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.contenedor-ejemplos-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.subcontenedor-ejemplos{
+    padding: 10px;
+    border-left: 1px solid black;
+}
+.ejemplo{
+    text-align: center;
+}
+
+/*----------------------------------------------------------*/
+/*Pseudoclases*/
+
+/*Selecciona al primer hijo de su padre*/
+.lista1 li:first-child {background-color: lightblue;}
+
+/*Selecciona al ultimo hijo de su padre*/
+.lista1 li:last-child {background-color: lightgreen;}
+
+/*Even: selecciona los pares. Odd: selecciona los impares*/
+.lista4 li:nth-child(even) {background-color: lightcoral;}
+.lista4 li:nth-child(odd) {background-color: lightgreen;}
+
+/*Selecciona cada elemento que es el n- ésimo hijo*/
+.lista2 li:nth-child(2) {background-color: lightpink;}
+
+/*Selecciona a los elementos 3, 6, 9...*/
+.lista2 li:nth-child(3n) {background-color: lightgray;}
+
+/*Selecciona a los elementos 2, 4, 6... */
+.lista3 li:nth-child(2n) {background-color: lightgreen;}
+
+/*Selecciona, de a 4 elementos, a partir del 3er elemento*/
+.lista3 li:nth-child(4n+3) {background-color: lightseagreen;}
+
+/*Pseudoclases para hipervínculos*/
+a{
+    padding: 5px;
+    border-radius: 5px;
+}
+a:link {
+    border: 1px red solid;
+    background-color: pink;
+    color: red;
+}
+a:hover {
+    border: 1px green solid;
+    background-color: lightgreen;
+    color: green;
+}
+a:visited {
+    border: 1px blue solid;
+    background-color: lightblue;
+    color: blue;
+}
+a:active {
+    border: 1px orange solid;
+    background-color: rgb(247, 205, 127);
+    color: orangered;
+}

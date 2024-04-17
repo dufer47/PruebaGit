@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pseudoclases.css">
+    <title>Pseudoclases</title>
+</head>
+
+<body>
+    <h1>Pseudoclases</h1>
+    <p>Una pseudoclase en CSS es una palabra clave que se usa para seleccionar un estado o comportamiento específico de
+        un elemento HTML. Las pseudoclases permiten aplicar estilos a elementos en función de su interacción con el
+        usuario o su posición en la estructura del documento, sin necesidad de agregar clases o atributos adicionales en
+        el marcado HTML. Las pseudoclases se escriben con <b>dos puntos (:) </b> seguidos de la palabra clave que
+        describe el estado o comportamiento que se desea seleccionar. </p>
+
+    <!-- Pseudoclases para elementos hijos: -->
+    <h2>Pseudoclases para elementos hijos:</h2>
+    <div class="contenedor-ejemplos">
+        <div class="subcontenedor-ejemplos">
+            <p><b>:first-child</b> Selecciona al primer hijo de su padre
+                <br>
+                <b>:last-child</b> Selecciona al ultimo hijo de su padre
+            </p>
+            <ol class="lista1">
+                <li> Item 1</li>
+                <li> Item 2</li>
+                <li> Item 3</li>
+                <li> Item 4</li>
+                <li> Item 5</li>
+                <li> Item 6</li>
+                <li> Item 7</li>
+                <li> Item 8</li>
+                <li> Item 9</li>
+                <li> Item 10</li>
+                <li> Item 11</li>
+                <li> Item 12</li>
+            </ol>
+
+            <p><b>:nth-child(even)</b> Selecciona los hijos pares. <br>
+                <b>:nth-child(odd)</b> Selecciona los hijos impares.
+            </p>
+            <ol class="lista4">
+                <li> Item 1</li>
+                <li> Item 2</li>
+                <li> Item 3</li>
+                <li> Item 4</li>
+                <li> Item 5</li>
+                <li> Item 6</li>
+                <li> Item 7</li>
+                <li> Item 8</li>
+                <li> Item 9</li>
+                <li> Item 10</li>
+                <li> Item 11</li>
+                <li> Item 12</li>
+            </ol>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <p><b>:nth-child(n)</b> Selecciona cada elemento que es el <i> n- ésimo </i> hijo</p>
+            <ul>
+                <li><b>:nth-child(2) </b> selecciona al 2do hijo</li>
+                <li><b>:nth-child(3n) </b> selecciona al 3er, 6to y 9no hijo</li>
+            </ul>
+            <ol class="lista2">
+                <li> Item 1</li>
+                <li> Item 2</li>
+                <li> Item 3</li>
+                <li> Item 4</li>
+                <li> Item 5</li>
+                <li> Item 6</li>
+                <li> Item 7</li>
+                <li> Item 8</li>
+                <li> Item 9</li>
+                <li> Item 10</li>
+                <li> Item 11</li>
+                <li> Item 12</li>
+            </ol>
+            <ul>
+                <li><b>:nth-child(2n) </b> selecciona al 2do, 4to, 6to... hijo</li>
+                <li><b>:nth-child(4n+3) </b> selecciona de a 4 hijos, a partir del 3er hijo</li>
+            </ul>
+            <ol class="lista3">
+                <li> Item 1</li>
+                <li> Item 2</li>
+                <li> Item 3</li>
+                <li> Item 4</li>
+                <li> Item 5</li>
+                <li> Item 6</li>
+                <li> Item 7</li>
+                <li> Item 8</li>
+                <li> Item 9</li>
+                <li> Item 10</li>
+                <li> Item 11</li>
+                <li> Item 12</li>
+            </ol>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            
+        </div>
+
+        <div class="subcontenedor-ejemplos">
+            
+        </div>
+    </div>
+
+    <!-- Pseudoclases para hipervínculos: -->
+    <h2>Pseudoclases para hipervínculos:</h2>
+    <p>Las pseudoclases para hipervínculos en CSS se utilizan para aplicar estilos a <b>enlaces o anclas < a ></b> en función de su estado o comportamiento específico. Estas pseudoclases son especialmente útiles para mejorar la experiencia del usuario al resaltar enlaces cuando el usuario interactúa con ellos.</p>
+    <ul>
+        <li><b>:link</b> se refiere a un enlace que todavía no ha sido visitado.</li>
+        <li><b>:hover</b> se refiere a un elemento sobre el que se coloca el puntero del mouse.</li>
+        <li><b>:visited</b> se refiere a un enlace que ya ha sido visitado.</li>
+        <li><b>:active</b> se refiere a cualquier elemento que ha sido activado por el usuario.</li>
+    </ul>
+    <h3>Ejemplo:</h3>
+    <div class="ejemplo">
+        <a href="https://google.com" target="_blank">Ir a Google</a>
+    </div>
+    <p>En tu navegador deberías ver lo siguiente (imágenes a modo ilustrativo):</p>
+    <div class="contenedor-ejemplos-2" style="text-align: center;">
+        <div class="subcontenedor-ejemplos">
+            <span style="padding: 5px; border-radius: 5px; border: 1px red solid; background-color: pink; color: red;"><u>Ir a Google</u></span>
+            <h4>Hipervínculo sin visitar</h4>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <span style="padding: 5px; border-radius: 5px; border: 1px green solid; background-color: lightgreen; color: green;"><u>Ir a Google</u></span>
+            <h4>Hipervínculo sobre el cual pasamos el mouse</h4>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <span style="padding: 5px; border-radius: 5px; border: 1px orange solid; background-color: rgb(247, 205, 127); color: orangered;"><u>Ir a Google</u></span>
+            <h4>Hipervínculo activo (al presionar el mouse sobre él)</h4>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <span style="padding: 5px; border-radius: 5px; border: 1px blue solid; background-color: lightblue; color: blue;"><u>Ir a Google</u></span>
+            <h4>Hipervínculo visitado</h4>
+        </div>
+    </div>
+</body>
+
+</html>

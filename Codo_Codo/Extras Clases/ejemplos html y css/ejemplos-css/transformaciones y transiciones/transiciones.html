@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="transiciones.css">
+    <title>Transiciones</title>
+</head>
+<body>
+    <h1>Transiciones</h1> 
+    <p>Una transición en CSS es una técnica que permite crear efectos suaves y animaciones entre dos estados diferentes de un elemento HTML. Estas transiciones son útiles para mejorar la experiencia del usuario al proporcionar una transición gradual y visualmente atractiva entre los estilos de un elemento antes y después de que ocurra un cambio, como un evento de hover (pasar el cursor sobre un elemento) o un cambio de estado. Las transiciones se aplican a las propiedades CSS de un elemento, como el color, el tamaño, la posición o cualquier propiedad que pueda cambiar con el tiempo. Cuando se activa un evento, como el paso del cursor sobre un elemento, la propiedad cambia de un valor a otro de manera suave y gradual en lugar de cambiar instantáneamente.</p>
+
+    <h2>Ejemplos de transiciones</h2>
+    <div class="contenedor-ejemplos">
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 1: Se aplica transición <span style="color: blue;">al pasar </span> el mouse (hover):</h4>
+            <p>Si nos fijamos bien, este estilo se aplica sólo al mover el ratón sobre el enlace (transición de entrada). <br> Sin embargo, si movemos el ratón fuera del enlace, no se produce transición sino que realiza el cambio de forma brusca.</p>
+            <a href="#" class="enlace1">Enlace</a>
+            <h4>Mejora: Se aplica transición <span style="color: blue;">al pasar y quitar </span>el mouse (hover):</h4>
+            <p><b>Truco:</b> Si movemos las propiedades de transición al primer  bloque (.enlace2 {}), se aplicarán tanto en las transiciones de entrada como en las de salida.</p>
+            <a href="#" class="enlace2">Enlace</a>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 2: Se aplica transición al pasar y quitar el mouse sobre un elemento < div >:</h4>
+            <div class="div-transicion">Esto es una transición...</div>
+            <p>La clase <span style="color: blue; font-weight: bold;">.div-transicion</span> tiene establecido un ancho y alto de 100 píxelesun color de fondo y texto. En esta clase también establecemos una transición en todas las propiedades del elemento con una duración de 2 segundos y una función de temporización lineal. Esto significa que cualquier cambio en las propiedades dentro de este elemento se realizará suavemente durante un período de 2 segundos cuando se active. <br>
+            La clase <span style="color: blue; font-weight: bold;">.div-transicion:hover</span> se aplica cuando el cursor del mouse se coloca sobre el elemento con la clase .div-transicion. Define cómo deben cambiar las propiedades cuando el usuario interactúa con el elemento. Se cambia el ancho del elemento al 100% del ancho de su contenedor, lo que hará que se expanda horizontalmente para llenar su contenedor, también cambia el color de fondo, texto y tamaño de texto.</p>
+        </div>
+        <div class="subcontenedor-ejemplos">
+            <h4>Ejemplo 3: Se aplica transición al pasar y quitar el mouse sobre una imagen:</h4>
+            <div class="contenedor-imagen">
+                <img src="paisaje.jpeg" alt="paisaje" class="imagen">
+            </div>
+            <p>La clase <span style="color: blue; font-weight: bold;">.imagen</span> le define un ancho a la imagen (50%), crea una sombra y se extablece una transición lineal de 2 segundos. <br>
+            La clase <span style="color: blue; font-weight: bold;">.imagen:hover</span> se aplica al pasar encima el cursor del mouse sobre la imagen y modifica las propiedades de ancho (70%), se le da al elemento una forma de círculo y a través de la propiedad filter se convierte la imagen en escala de grises al 100%, además de modificarse la posición y el color de la sombra.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="selectores-avanzados.css">
+    <title>Selecores avanzados</title>
+</head>
+<body>
+    <h1>Selectores avanzados</h1>
+    <p>Un selector avanzado en CSS se refiere a una técnica que permite seleccionar <b>elementos específicos</b> en una página web utilizando una combinación de selectores más compleja que simplemente seleccionar elementos por su etiqueta, clase o identificador. Los selectores avanzados son parte fundamental de la potencia y flexibilidad de CSS para aplicar estilos y dar formato a páginas web.</p>
+
+    <!-- Selector agrupado -->
+    <h2>Selector agrupado</h2>
+    <p>Utiliza como caracter de separación la <b>, (coma)</b> y permite aplicar estilos a varios selectores al mismo tiempo. Por ejemplo, puedes aplicar el mismo estilo a múltiples clases: <b> .clase1, .clase2, .clase3 { estilo: valor; }.</b></p>
+    <div class="caja-ejemplo">
+        <p>Por ejemplo: en esta página se aplicaron dos selectores agrupados para que las etiquetas h1 y h2 compartieran las mismas propiedades:</p>
+        <div class="imagen-ejemplo">
+            <img src="selector-agrupado.png" alt="selector-agrupado">
+        </div>
+    </div>
+
+    <!-- Selector descendiente -->
+    <h2>Selector descendiente</h2>
+    <p>Utiliza como caracter de separación el <b>espacio </b> y permite seleccionar un elemento que es descendiente de otro elemento. Por ejemplo, puedes seleccionar todos los párrafos <b>< p > </b>dentro de un <b>div </b>con una clase específica: <b>div.mi-clase p.</b></p>
+    <div>
+        <p class="elemento-descendiente">Párrafo con clase <b>elemento-descendiente</b>, que coloca el texto en cursiva. El selector descendiente le aplica el resto de los estilos, a aquellos elementos que tengan este selector y estén dentro de un <b>< div ></b>.</p>
+        <div class="elemento-descendiente"> Div con clase <b>elemento-descendiente</b>, que coloca el texto en cursiva. El selector descendiente le aplica el resto de los estilos, a aquellos elementos que tengan este selector y estén dentro de un <b>< div ></b>.</div>
+        <h3 class="elemento-descendiente">Encabezado de nivel 3 con clase <b>elemento-descendiente</b>, que coloca el texto en cursiva. El selector descendiente le aplica el resto de los estilos, a aquellos elementos que tengan este selector y estén dentro de un <b>< div ></b>.</h3>
+        <p>Párrafo sin la clase <b>elemento-descendiente</b>, a pesar de estar dentro del <b>< div ></b> no se le aplican los estilos del selector descendiente.</p>
+    </div>
+    <br>
+    <div class="caja-ejemplo">
+        <p>Por ejemplo: en el ejemplo de arriba se aplicaron estilos a aquellos elementos que poseen la clase <b>elemento-descendiente</b> y se encuentran dentro de un < div >. </p>
+        <div class="imagen-ejemplo">
+            <img src="selector-descendiente.png" alt="selector-descendiente">
+        </div>
+    </div>
+
+    <!-- Selector de hijos directos -->
+    <h2>Selector de hijos directos</h2>
+    <p>Utiliza como caracter de separación el <b>> (mayor) </b> y permite seleccionar elementos que son <b>hijos directos</b> de otro elemento, descartando nietos y sucesivos. Por ejemplo, puedes seleccionar todos los elementos <b>li</b> que son hijos directos de una lista desordenada < ul >: <b> ul > li.</b></p>
+    <div>
+        <ul>
+            <li>Hijo directo 1</li>
+            <li>Hijo directo 2</li>
+            <li>Hijo directo 3</li>
+            <div>
+                <li>No es hijo directo (se encuentra dentro de un < div >)</li>
+            </div>
+            <li>Hijo directo 4</li>
+        </ul>
+    </div>
+    <br>
+    <div class="caja-ejemplo">
+        <p>Por ejemplo: en el ejemplo de arriba se aplicaron estilos a aquellos ítems de la lista desordenada que son hijos directos, no así a quienes poseen un elemento intermedio, como se observa en el <b>< div ></b>.</p>
+        <div class="imagen-ejemplo">
+            <img src="selector-hijos directos.png" alt="selector-hijosdirectos">
+        </div>
+    </div>
+
+    <!-- Selector de hermano adyacente -->
+    <h2>Selector de hermano adyacente</h2>
+    <p>Utiliza como caracter de separación el <b> + (signo más) </b> y permite seleccionar un elemento que es adyacente y tiene el mismo elemento principal (el mismo "padre") que otro elemento específico. En otras palabras, selecciona el elemento inmediatamente después del elemento de referencia en la estructura HTML si ambos comparten el mismo elemento padre.</p>
+    <div>
+        <h3>Título de la noticia</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, excepturi! Veritatis voluptatum accusamus officia saepe ut quam deleniti dolorum maiores?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis hic officia facere harum quos pariatur delectus nemo doloribus, a nam, enim dolorum, sunt voluptatem sapiente porro sed recusandae nisi alias? Adipisci odit quisquam neque maxime quaerat nesciunt suscipit modi amet. Atque soluta magni, unde illum cum illo hic ipsa architecto!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis hic officia facere harum quos pariatur delectus nemo doloribus, a nam, enim dolorum, sunt voluptatem sapiente porro sed recusandae nisi alias? Adipisci odit quisquam neque maxime quaerat nesciunt suscipit modi amet. Atque soluta magni, unde illum cum illo hic ipsa architecto!</p>
+        <hr>
+        <h3>Título de la noticia</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, excepturi! Veritatis voluptatum accusamus officia saepe ut quam deleniti dolorum maiores?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis hic officia facere harum quos pariatur delectus nemo doloribus, a nam, enim dolorum, sunt voluptatem sapiente porro sed recusandae nisi alias? Adipisci odit quisquam neque maxime quaerat nesciunt suscipit modi amet. Atque soluta magni, unde illum cum illo hic ipsa architecto!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis hic officia facere harum quos pariatur delectus nemo doloribus, a nam, enim dolorum, sunt voluptatem sapiente porro sed recusandae nisi alias? Adipisci odit quisquam neque maxime quaerat nesciunt suscipit modi amet. Atque soluta magni, unde illum cum illo hic ipsa architecto!</p>
+    </div>
+    <br>
+    <div class="caja-ejemplo">
+        <p>Por ejemplo: en el ejemplo de arriba se aplican estilos al <b>párrafo</b> que es hermano adyacente del <b>encabezado de nivel 3</b>.</p>
+        <div class="imagen-ejemplo">
+            <img src="selector-hermano adyacente.png" alt="selector-hermano adyacente">
+        </div>
+    </div>
+
+    <!-- Selector general de hermanos -->
+    <h2>Selector general de hermanos</h2>
+    <p>Utiliza como caracter de separación la <b> ~ (virgulilla o tilde de la ñ) </b> y permite seleccionar todos los elementos que son hermanos del mismo nivel y que siguen al elemento de referencia en la estructura HTML, siempre que compartan el mismo elemento padre.</p>
+
+    <h4 class="titulo-noticia">Título de la noticia</h4>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis iure totam est cum porro quam magni, sed dolorem animi. Molestias rerum officia dicta exercitationem corporis dolorem eius eligendi vel ab?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis iure totam est cum porro quam magni, sed dolorem animi. Molestias rerum officia dicta exercitationem corporis dolorem eius eligendi vel ab?</p>
+    <span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto id asperiores sunt tempora nemo nam aliquid iste corrupti magni!</p>
+    </span>
+    <a href="#">Enlace</a>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis iure totam est cum porro quam magni, sed dolorem animi. Molestias rerum officia dicta exercitationem corporis dolorem eius eligendi vel ab?</p>
+    <br>
+    <div class="caja-ejemplo">
+        <p>Por ejemplo: en el ejemplo de arriba se aplican estilos a los <b>párrafos</b> que son hermanos del <b>encabezado de nivel 4</b>, sean o no adyacentes.</p>
+        <div class="imagen-ejemplo">
+            <img src="selector-general hermanos.png" alt="selector-general hermanos">
+        </div>
+    </div>
+
+</body>
+</html>
