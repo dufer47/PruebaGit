@@ -1,0 +1,164 @@
+Bases de Datos
+Una base de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso. Es una
+forma de almacenar información en forma más eficiente de lo que sería un archivo de texto.
+Se crean y mantienen a través de un DBMS o motor de base de datos, que facilita la definición, construcción, manipulación y compartición de bases de
+datos entre usuarios y aplicaciones. Contienen datos que pueden diferir entre sí pero poseen relaciones en común. Por ejemplo: alumnos y libros en el contexto de una biblioteca.
+
+¿Por qué son necesarias las bases de datos?
+Si tenemos una empresa es conveniente tener un sistema para registrar ventas, empleados, sueldos, etc. Estos datos pueden guardarse en una base de datos con tablas para
+registrar esa información.
+Esta información podrá ser consultada por usuarios (vistas), administrada por un sistema con tablas relacionadas (esquema conceptual) y almacenada en una base de datos (esquema interno).
+
+SGBD más conocidos
+● Existen diferentes Sistemas de Gestión de Base de Datos:
+    ○ Relacionales: MySQL, MaríaDB, PostgreSQL, SQL Server, entre otras.
+    ○ No relacionales: Mongo DB, Redis, Elasticsearch y Cassandra.
+
+Bases de datos relacionales
+Las bases de datos relacionales permiten gestionar el acceso a los datos, su almacenamiento, modificación, eliminación, consulta y el múltiple acceso desde distintas aplicaciones y usuarios.
+Además permiten gestionar permisos para que una parte de los datos estén disponibles para ciertos usuarios y no para otros. Todo esto es resuelto por un motor de base de
+datos, generando una independencia entre la base de datos y la aplicación que la consulte.
+Son más eficientes en cuanto al almacenamiento y búsqueda de información, comparadas con un archivo de texto plano donde la lectura la haríamos en forma secuencial (línea por línea),
+cargándola toda en memoria, ni tampoco podríamos acceder y guardar información al mismo tiempo.
+
+Bases de datos no relacionales
+● No tienen un identificador que sirva de relación entre un conjunto de datos y otros.
+● Normalmente la información se organiza en documentos y es muy útil cuando no tenemos un esquema exacto de lo que se va a almacenar.
+● Suelen utilizar documentos JSON, a diferencia de las bases de datos relacionales que despliegan su información en tablas.
+● Las bases de datos más competitivas suelen permitir operaciones de ambos tipos: relacionales y no relacionales.
+La diferencia entre el éxito y el fracaso de una base de datos recae en el diseño del modelo. De nada sirve elegir la base de datos más apropiada para nuestro sistema, si
+luego no se hace un buen diseño.
+En una base de datos no relacional una unidad de datos puede llegar a ser demasiado compleja como para plasmarlo en una tabla.
+
+Ubicación de las Bases de Datos
+Dentro de un entorno de un sistema de bases de datos se encuentran en el nivel más bajo. Generalmente se los considera como la parte "física", ya que, aunque
+sean un contenido lógico, se encuentran almacenadas o creadas en un dispositivo físico. Por ejemplo: un servidor. Para que un usuario acceda a los datos en una Base de Datos, necesita de un
+software especial conocido como SGBD (Sistema Gestor de Base de Datos) o DBMS (Data Base Managment System).
+
+¿Cómo empezamos a pensar en una BD?
+Se realiza una entrevista con el cliente para hacer un relevamiento de datos. El relato del cliente nos permite identificar qué información va a necesitar. Si el cliente nos
+cuenta que tiene empleados, su registro es candidato a ser una tabla que va a tener atributos asociados (sustantivos): nombre, apellido, DNI, fecha de nacimiento, etc.
+Estas tablas se llaman entidades y permitirán almacenar los datos.
+Por ejemplo: en el sistema de venta online tendría productos, marcas y conceptos candidatos a ser tablas o atributos.
+
+Abstracción y Modelado de datos
+La abstracción de datos es una técnica o metodología que permite diseñar estructuras de datos, consiste en representar bajo ciertos lineamientos de formato las características
+esenciales de una estructura de datos.
+El modelado de datos permite describir:
+● Las estructuras de datos de la base: Tipo de datos y sus relaciones.
+● Las restricciones de integridad: Conjunto de condiciones que deben cumplir los datos para reflejar la realidad deseada.
+● Operaciones de manipulación de los datos: agregado, borrado, modificación y recuperación de datos.
+
+Modelo Entidad-Relación
+● Método para diseñar Bases de Datos. Se representa a través de diagramas y está formado por varios elementos.
+● Para modelar los datos utilizamos un Diagrama de Entidad-Relación (DER), que pertenece al Lenguaje de Modelado Unificado (UML, Unified Modeling Language). Este diagrama
+representa entidades (tablas) y las relaciones lógicas entre ellas.
+● Una vez modelados los datos se implementan en un SGBD.
+
+Diagrama Entidad Relación | Componentes
+ENTIDADES: Representan cosas u objetos (ya sean reales o abstractos). Se representan en los diagramas como rectángulos. Se suelen colocar en plural.
+    Alumnos | Libros | Autos | Empleados | Materias
+ATRIBUTOS: Definen o identifican las características propias y por lo general únicas de una entidad, pueden ser de distintos tipos (numéricos, texto, fecha, etc.), y se
+representan por medio de un óvalo o elipse. Cada entidad contiene distintos atributos, que dan información sobre ella misma.
+    DNI | Nombre | Apellido | Dirección
+RELACIONES: Se representan con rombos y tienen una característica conocida como “cardinalidad”, que indica el sentido y la cantidad de “relaciones” existentes entre
+una entidad y otra. Los tipos de relaciones pueden ser:
+● 1 a N (uno a muchos): una persona tiene muchos autos y viceversa, muchos autos pueden ser de una persona:
+    Persona(1) - Tiene - (n)Autos
+● 1 a 1 (uno a uno): a un alumno le pertenece únicamente un boletín y viceversa, un boletín pertenece únicamente a un alumno:
+    Alumno(1) - Pertenece - (1)Boletín
+● N a N (muchos a muchos): muchos alumnos pueden tener muchas materias y viceversa, muchas materias pueden contener a muchos alumnos:
+    Alumno(n) - Tiene - (n)Materia
+
+Una empresa de venta de electrodomésticos tiene clientes, pedidos y productos. Desea modelar a través de un DER cómo se implementaría la Base de Datos:
+1. Detectar las entidades:
+    Clientes - Pedidos - Productos
+2. Detectar los atributos:
+    Clientes: Apellido - Nombre - Tel -DNI - Fec.Nac
+    Pedidos: Nro - Fecha
+    Productos: Nombre - Cant - Código - Precio
+3. Conocidas las entidades y sus atributos, establecemos las relaciones existentes entre sí: un cliente puede realizar varios pedidos (ya que en cada compra que
+    realice, se efectuará un nuevo pedido) y que un pedido puede tener varios productos (ya que una misma compra/pedido pueden haber más de un artículo encargado).
+        Clientes(1) - Tiene - (n)Pedidos(n) - Tiene - (1)Productos
+4. Una vez que tenemos el DER lo pasamos a forma de TABLA
+    Clientes
+        ID  RazonSocial Tel CUIT
+    Productos
+        Id  Nombre  Precio
+    Pedidos
+        Nro IdCliente   Fecha
+    ItemPedidos
+        IdPedido    IdProducto  Cantidad    Precio
+
+Tipos de Datos
+Los atributos de las entidades deben cumplir o pueden ser únicamente de ciertos tipos de datos. Entre ellos, los más importantes / utilizados son:
+● NUMÉRICOS: se utilizan para representar valores/atributos de carácter numérico tanto enteros, como decimales.
+● TEXTO (VARCHAR): se utilizan para representar valores de texto, como ser cadenas de caracteres.
+● DATE (FECHA): se utilizan para representar fechas, horas, minutos, segundos, etc.
+● BOOLEAN (LÓGICO): se utilizan para representar valores verdaderos o falsos (true or false).
+Los tipos de datos del ejemplo anterior podrían ser los siguientes:
+
+Clientes
+ID  RazonSocial     Tel         CUIT
+INT VARCHAR(100)    VARCHAR(20) DATE
+
+Productos
+Id  Nombre      Precio
+INT VARCHAR(20) DOUBLE
+
+Pedidos
+Nro IdCliente   Fecha
+INT INT         DATE
+
+ItemPedidos
+IdPedido    IdProducto  Cantidad    Precio
+INT         INT         INT         DOUBLE
+
+Primary key y Foreign Key
+● Las claves primarias (Primary Keys) son valores que identifican de manera única a cada fila o registro de una tabla, esto quiere decir que no se puede repetir.
+Por ejemplo: un DNI, un código de producto, etc.
+● Una clave foránea (Foreign Key) es un campo de una tabla “X” que sirve para enlazar o relacionar entre sí con otra tabla “Y” en la cual el campo de esta tabla es una clave primaria (Primary Key).
+Para que un campo sea una clave, esta tiene que ser una clave primaria en otra tabla.
+
+Instalación MySQL Server | Paso a paso
+1. Descargar el instalador de https://dev.mysql.com/downloads/installer/
+2. Ejecutar el instalador y seleccionar Server Only Execute.
+3. Darle a next hasta llegar a la pantalla Authentication Method: Seleccionar Use Legacy Authentication Method.
+4. En la siguiente pantalla setear contraseña para el usuario root en MySQL Root Password.
+5. Darle next y al llegar a Apply Configuration apretar Execute.
+Importante: Para la instalación se recomienda ver los tutoriales que aparecen en la presentación y utilizar los archivos que están en el Aula Virtual y la carpeta de Drive compartida.
+
+Herramientas para manejo de Base de Datos
+MYSQL WORKBENCH: Es una herramienta visual de diseño de bases de datos que integra desarrollo de software, administración de bases de datos, diseño de bases de datos, creación y
+mantenimiento para el sistema de base de datos MySQL.
+PHPMYADMIN: Es una herramienta escrita en PHP con la intención de manejar la administración de MySQL a través de páginas web, utilizando Internet. Puede crear y eliminar Bases de Datos, crear,
+eliminar y alterar tablas, borrar, editar y añadir campos, ejecutar cualquier sentencia SQL, administrar claves en campos, administrar privilegios y exportar datos en varios formatos.
+
+/\/\/\/\/\/\/\
+
+Creando nuestra primer BD
+Crearemos nuestra primera BD llamada empleados_departamentos. Utilizaremos el archivo bd_empleados_departamentos.sql para ejecutar la sentencia SQL que la crea. Para ello seguiremos los siguientes pasos:
+1. Abrir el archivo que contiene la sentencia SQL.
+2. Crear una nueva consulta SQL y pegar todo el texto dentro.
+3. Ejecutar desde el ícono del rayo.
+4. Quedará creada la Base de Datos con dos tablas: departamentos y empleados
+Para crear una tabla utilizamos CREATE TABLE e indicamos cuáles son las columnas (atributos/campos) que conformarán nuestra tabla.
+Para agregar registros utilizamos INSERT INTO nombredelatabla VALUES y estos datos van separados por comas en el mismo orden en que fueron incorporados los campos.Los datos serán incorporados en la tabla
+
+Ver los datos de las tablas
+Haciendo clic con el botón derecho en nuestra tabla y seleccionando Select Rows – Limit 1000 veremos los resultados de nuestra primer consulta SQL.
+Con CTRL + Enter ejecutamos la consulta, o con el ícono del rayito
+
+Claves principales
+Una clave principal es un identificador único para cada registro de la tabla. Para definirla tenemos que analizar las claves candidatas, aquellas que podrían ser claves
+principales, un valor propio de ese registro que identifique de forma única esa instancia del dato. Cada registro debería tener un identificador único, para evitar duplicados
+
+Exportar una BD (backup)
+Podemos exportar una Base de datos desde Workbench con el objetivo de hacer un backup:
+1. Ir a Server – Data export
+2. Seleccionar la base de datos (schema) que se desea exportar del cuadro de la izquierda dentro de Object Selection.
+3. Seleccionar del cuadro de la derecha aquellas tablas que se desean exportar.
+4. Determinar a qué carpeta se exportará la base de datos y cómo se exportarán los datos:
+    a. Si elegimos Export to Dump Project Folder se exportarán las tablas por separado.
+    b. Con Export to Self-Contained File podremos darle un nombre al archivo, pero con todas las tablas juntas.
+5. Hacer clic en Start Export y colocar la contraseña del host.

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Horoscopados | Inicio</title>
+    <link rel="icon" type="image/x-icon" href="Imagenes/astrologia.png">
+    <link rel="stylesheet" href="./CSS/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container flex">
+            <h1><b>Horoscopados</b></h1>
+            <nav>
+                <ul>
+                <li class="nav"><a href="index.html">Inicio</a></li>
+                <li class="nav"><a href="signos.html">Signos</a></li>
+                <li class="nav"><a href="constelaciones.html">Constelaciones</a></li>
+                <li class="nav"><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Carrusel -->
+    <div id="horoscopoCarousel" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#horoscopoCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#horoscopoCarousel" data-slide-to="1"></li>
+            <li data-target="#horoscopoCarousel" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <a href="#mihoroscopo">
+                <div class="carousel-item active">
+                    <img src="Imagenes/horoscopo1.jpg" alt="Horóscopo Diario" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>Horóscopo</h3>
+                        <p>Descubre lo que los astros tienen preparado para ti.</p>
+                    </div></a>
+            </div>
+            <div class="carousel-item">
+                <a href="signos.html">
+                    <img src="Imagenes/horoscopo2.jpg" alt="Signos del Zodiaco" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>Signos del Zodiaco</h3>
+                        <p>Conoce las características de cada signo zodiacal.</p>
+                    </div></a>
+            </div>
+            <div class="carousel-item">
+                <a href="constelaciones.html">
+                    <img src="Imagenes/horoscopo3.jpg" alt="Constelaciones" class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>Constelaciones</h3>
+                        <p>Conoce aun mas sobre las Constelaciones!.</p>
+                    </div></a>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#horoscopoCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#horoscopoCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery    REVISAR -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <div class="intro">
+        <h2>¡Bienvenidos a Nuestro Sitio de Horóscopos!</h2>
+        <p>Nos alegra tenerte aquí. Nuestra página está diseñada para ofrecerte una visión completa y enriquecedora del mundo de la astrología. Esperamos que disfrutes de tu visita y encuentres la guía y el conocimiento que buscas.</p>
+    </div>
+
+    <div class="intro">
+        <h2>¿Qué son los Horóscopos?</h2>
+        <p>Los horóscopos son predicciones astrológicas basadas en la posición de los planetas y otros cuerpos celestes en el momento de tu nacimiento. Desde tiempos antiguos, la gente ha recurrido a la astrología para obtener orientación sobre sus vidas, amor, carreras y bienestar general. La astrología puede ofrecer perspectivas sobre tu personalidad, tus puntos fuertes y débiles, y cómo puedes aprovechar las energías cósmicas para tomar decisiones informadas.</p>
+    </div>
+
+    <div class="intro">
+        <a name="mihoroscopo"><h2>Horoscopo para ti</h2></a>
+            <ol>
+                <li class="signos"><a href="aries.html">Aries</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="tauro.html">Tauro</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="geminis.html">Geminis</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="cancer.html">Cancer</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="leo.html">Leo</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="virgo.html">Virgo</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="libra.html">Libra</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="escorpio.html">Escorpio</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="sagitario.html">Sagitario</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="capricornio.html">Capricornio</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="acuario.html">Acuario</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+                <li class="signos"><a href="piscis.html">Piscis</a></li>
+                    <ul>
+                        <li>Fecha: </li>
+                        <li>Planeta: </li>
+                        <li>Elemento: </li>
+                    </ul><hr>
+            </ol>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Horóscopos y Signos Zodiacales. Todos los derechos reservados.</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
