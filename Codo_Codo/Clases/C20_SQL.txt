@@ -232,7 +232,8 @@ Sentencias SQL | Uso de Alias
     ○ Permite asignar un nombre a una expresión, fórmula o campo calculado
 Ejemplo: renombrar tablas y atributos calculados
 
-    SELECT V.precio , V.fecha, (V.precio * 1.21) AS precio_con_iva FROM ventas AS V;    ???
+    SELECT V.precio , V.fecha, (V.precio * 1.21) AS precio_con_iva FROM ventas AS V;   ???   -> Con "AS" apodo los items colocados anteriormente, con el nombre que coloque posteriormente
+    En este caso, (V.precio * 1.21) lo apodo precio_con_iva
 
 
 Sentencias SQL | Operador IN | DISTINCT
@@ -245,3 +246,4 @@ SELECT DISTINCT: se usa para devolver solo valores distintos (diferentes) de una
 columna que puede tener registros duplicados. Sintaxis:
 
     SELECT DISTINCT column1, column2, ... FROM table_name;
+
