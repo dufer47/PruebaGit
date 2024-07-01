@@ -1,0 +1,56 @@
+¿Qué es un CRUD?
+
+En programación solemos usar el término CRUD para referirnos a las operaciones básicas que puedes realizar sobre un conjunto de datos y por sus siglas son:
+Crear (c por Create): Insertar insertar información (registros) en la base de datos.
+Leer (r por Read): Consultar datos, ya sea un registro o una colección de ellos.
+Actualizar (u por Update): Modificar datos (registros) existentes en la base de datos.
+Eliminar registros (d por Delete): Quitar un registro de la base de datos.
+Los CRUDs son programas que involucran todas estas operaciones sobre una entidad. Por ejemplo, una tabla con datos de empleados.
+
+¿Qué es flask?
+
+Flask es un “micro” Framework escrito en Python y concebido para facilitar el desarrollo de Aplicaciones Web bajo el patrón MVC (Model - View - Controller o
+Modelo - Vista - Controlador).
+“Micro” no implica que Flask solo sea apto para proyectos pequeños, sino que al instalar Flask se instalan las herramientas indispensables para crear una
+aplicación web funcional, y de ser necesario, más tarde se pueden agregar extensiones (plugins) para sumar funcionalidad.
+Para desarrollar una App básica o que se quiera desarrollar de una forma ágil y rápida Flask es muy conveniente.
+
+¿Por qué usar Flask?
+
+● Incluye un servidor web de desarrollo y un “modo depurador”: No se necesita una infraestructura con un servidor web para probar las aplicaciones o depurarlas.
+● Sencillo manejo de rutas: Posee un controlador que recibe las peticiones que hacen los clientes y ejecuta el código correspondiente.
+● Soporta de manera nativa el uso de cookies seguras.
+● Se pueden usar sesiones.
+● Sirve para construir servicios web o aplicaciones de contenido estático.
+● Flask es Open Source y está amparado bajo una licencia BSD.
+
+Herramientas necesarias
+
+Debemos asegurarnos de tener instaladas las siguientes aplicaciones:
+● Python (Link de descarga)
+● Visual Studio Code (Link de descarga)
+● XAMPP (Link de descarga)
+Para instalar Flask utilizaremos: pip install flask
+Para instalar MySQL utilizaremos: pip install Flask-MySQL
+Para instalar Jinja2 utilizaremos: pip install jinja2
+Luego podemos hacer: pip list para asegurarnos de que se han instalado estos paquetes.
+
+Herramientas necesarias
+
+Si aún no lo hemos hecho, instalamos en VSCode la extensión Python Extension Pack. Este pack contiene varias extensiones útiles, entre ellas las siguientes:
+● Python: Todo lo necesario para escribir código Python.
+● Jinja: Ayudas y coloreado de sintaxis del lenguaje de plantillas Jinja.
+● Visual Studio IntelliCode: Provides AI-assisted productivity features for Python developers in Visual Studio Code with insights based on understanding your
+code combined with machine learning..
+● Python Docstring Generator: Quickly insert Python comment blocks with contextually inferred parameters for classes and methods based on multiple,
+selectable template patterns.
+● Python Indent: Correct python indentation in Visual Studio Code.
+
+Estructura de carpetas
+
+Este proyecto requiere la estructura de carpetas que se describe a continuación:
+● Una carpeta principal, llamada SistemaEmpleados,
+● Una subcarpeta llamada templates, y dentro de esta, una llamada empleados.
+● Una subcarpeta de SistemaEmpleados que se llame uploads.
+Dentro de la carpeta empleados almacenaremos todos los archivos HTML que componen nuestra aplicación.
+Dentro de la carpeta uploads guardaremos las fotografías de los empleados.
