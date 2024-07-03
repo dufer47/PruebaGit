@@ -189,9 +189,24 @@ except Exception as e:
     # Cada error tiene un identificador único que puede verse utilizando la sintaxis:
     print(type(e))  # <class 'TypeError'>
 
+try:
+    n = float(input("Ingrese un número divisor: "))
+    5/n
+except TypeError:
+    print("No se puede dividir el número entre una cadena")
+except ValueError:
+    print("Debes introducir una cadena que sea un número")
+except ZeroDivisionError:
+    print("No se puede dividir por cero, prueba otro número")
+except Exception as e:
+    print("Ha ocurrido un error no previsto", type(e).__name__)
+
 """
 Módulos y paquetes
 
+Modulos = Librerias
+Paquetes -> Muchos Modulos
+as = alias
 En Python los módulos son archivos que contienen definiciones que se pueden importar en otros scripts para reutilizar sus funcionalidades.
 Un módulo es un archivo de Python cuyos objetos (funciones, clases, excepciones, etc.) pueden ser accedidos desde otro script. Constituye
 una muy buena herramienta para organizar el código en proyectos grandes o complejos.
@@ -251,6 +266,18 @@ class Despedida():
 # from paquete.adios.despedidas import Despedida
 saludar()
 Despedida()
+
+#######################################################################################
+
+# Carpeta Ejemplos_Paquetes_C27 es un paquete, contiene muchos modulos. Sin el __init__ la carpeta no es paquete
+from Ejemplos_Paquetes_C27 import saludos
+from Ejemplos_Paquetes_C27 import impuestos
+
+saludos.despedir()
+persona1 = saludos.Saludo()
+
+monto = 500
+print(impuestos.impuesto_iva21(monto))
 
 """
 Módulos esenciales

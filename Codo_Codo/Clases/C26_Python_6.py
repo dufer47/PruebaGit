@@ -312,11 +312,11 @@ class Bebidas:
     def __init__(self):
         self.__bebida = 'Naranja'
 
-    @property
+    @property   # getter: Consulta, lee. Si no se le pasa un parametro se entiende que es getter (@property)
     def favorita(self):
         return f"La bebida preferida es: {self.__bebida}"
 
-    @favorita.setter
+    @favorita.setter    # setter: Modifica, escribir. Si se le pasa un parametro se entiende que es setter (@funcion.setter)
     def favorita(self, bebida):
         self.__bebida = bebida
 
@@ -443,9 +443,52 @@ carrera1.agregar_materia(202,fisica)
 carrera1.agregar_materia(203,programacion)
 
 # Veomos la fecha de inicio de dictado de algunas materias:
-print(f"La fecha de inicio de {algebra.nombre} es
-{algebra.fecha_inicio}")
-print(f"La fecha de inicio de {fisica.nombre} es
-{fisica.fecha_inicio}")
-print(f"La fecha de inicio de {programacion.nombre} es
-{programacion.fecha_inicio}")
+print(f"La fecha de inicio de {algebra.nombre} es {algebra.fecha_inicio}")
+print(f"La fecha de inicio de {fisica.nombre} es {fisica.fecha_inicio}")
+print(f"La fecha de inicio de {programacion.nombre} es {programacion.fecha_inicio}")
+
+#####################################################################
+
+import random
+
+# Clase Dado
+class Dado:
+    def tirar(self):
+        self.valor=random.randint(1,6)
+    
+    def imprimir(self):
+        print(f"Valor del dado: {self.valor}")
+    
+    def retornar_valor(self):
+        return self.valor
+
+# Clase Juego de Dados
+class JuegoDeDado:  # Se va a valer de los objetos Dados para trabajar.
+    
+    def __init__(self):
+        self.dado1=Dado()
+        self.dado2=Dado()
+        self.dado3=Dado()
+
+    def jugar(self):
+        self.dado1.tirar()
+        self.dado1.imprimir()
+        self.dado2.tirar()
+        self.dado2.imprimir()
+        self.dado3.tirar()
+        self.dado3.imprimir()
+        
+        if(self.dado1.retornar_valor()==self.dado2.retornar_valor() and self.dado1.retornar_valor()==self.dado3.retornar_valor()):
+            print("Ganaste")
+        else:
+            print("Perdiste")
+
+        # if(self.dado1.retornar_valor()==self.dado2.retornar_valor() or self.dado1.retornar_valor()==self.dado3.retornar_valor()) or self.dado2.retornar_valor()==self.dado3.retornar_valor():
+        #     print("Ganaste")
+        # else:
+        #     print("Perdiste")
+
+print("\033[H\033[J")   # lIMPIA CONSOLA
+
+juego_dados = JuegoDeDado()
+juego_dados.jugar()
