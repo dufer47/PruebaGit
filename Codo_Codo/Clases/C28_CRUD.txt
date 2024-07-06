@@ -1,5 +1,6 @@
 ¿Qué es un CRUD?
 
+Crear-Leer-Actualizar-Eliminar en una Base de Datos
 En programación solemos usar el término CRUD para referirnos a las operaciones básicas que puedes realizar sobre un conjunto de datos y por sus siglas son:
 Crear (c por Create): Insertar insertar información (registros) en la base de datos.
 Leer (r por Read): Consultar datos, ya sea un registro o una colección de ellos.
