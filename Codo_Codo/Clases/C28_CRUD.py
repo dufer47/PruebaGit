@@ -55,14 +55,14 @@ cursor = miBaseDeDatos.cursor()
 # cursor.execute("DELETE FROM clientes WHERE nombre='Juan'")
 
 # miBaseDeDatos.commit()
-# print(cursor.rowcount,"registros modificados")
+# print(cursor.rowcount,"registros actualizados")
 
 #######################################################
 # FLASK
 from flask import Flask, redirect
 
 app = Flask(__name__)   # Es asi, no se toca. Me crea un objeto app, llamamos a Flask y le pasamos el parametro __name__
-# Con esto instanciamos una aplicacion Flask en app
+# Con esto instanciamos una aplicacion Flask (un obejto de la clase Flask) en app
 
 @app.route("/") # == app.add_url_rule("/","hello",hola_mundo)
 def hola_mundo():
