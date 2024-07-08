@@ -17,8 +17,8 @@
 
     <table> <!-- Se crea una tabla para mostrar los productos. -->
         <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
-            <tr>
-                <th>Código</th>
+            <tr>        <!-- <tr>: Define una fila dentro de la tabla. -->
+                <th>Código</th>     <!-- <th>: Define una celda de encabezado en una tabla, que normalmente aparece en negrita y centrada. -->
                 <th>Descripción</th>
                 <th>Cantidad</th>                
                 <th align="right">Precio</th>
@@ -34,16 +34,12 @@
         <a href="index.html">Menu principal</a>
     </div>
     <script>
-        const URL = "http://127.0.0.1:5000/"
-
-        // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-        //const URL = "https://USUARIO.pythonanywhere.com/"
+        const URL = "http://127.0.0.1:5000/"    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere. const URL = "https://USUARIO.pythonanywhere.com/"
         
-
         // Realizamos la solicitud GET al servidor para obtener todos los productos.
-        fetch(URL + 'productos')
-            .then(function (response) {
-                if (response.ok) {
+        fetch(URL + 'productos')    // Concatena http://127.0.0.1:5000/productos (devuelve el json de los productos). fetch es asincronia, hablamos de asincronía, promesas. Anda buscar a la API, mientras tanto mostrame toda la pagina, cuando la API venga hacemos los cambios (asincronia (fetch)).
+            .then(function (response) { // ver en promesas.js
+                if (response.ok) {  // Si la respuesta es ok (status 200 OK)...
                     //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
                     return response.json(); 
             } else {
@@ -53,28 +49,22 @@
             })
 
             //Esta función maneja los datos convertidos del JSON.
-            .then(function (data) {
-                let tablaProductos = document.getElementById('tablaProductos'); //Selecciona el elemento del DOM donde se mostrarán los productos.
+            .then(function (data) { // Si consigos los datos dsp del ok...
+                let tablaProductos = document.getElementById('tablaProductos'); //Selecciona el elemento del DOM donde se mostrarán los productos. Armamos la tabla en HTML. getElementById('tablaProductos') apuntamos a la tablaProductos creada anteriormente.
 
                 // Iteramos sobre cada producto y agregamos filas a la tabla
                 for (let producto of data) {
                     let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada producto.
-                    fila.innerHTML = '<td>' + producto.codigo + '</td>' +
-                        '<td>' + producto.descripcion + '</td>' +
-                        '<td align="right">' + producto.cantidad + '</td>' +
-                        '<td align="right">' + producto.precio + '</td>' +
-                        
-                        // Mostrar miniatura de la imagen (verificar que funciona)
-                        '<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
-                        
-                        //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-                        //'<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
+                    fila.innerHTML ='<td>' + producto.codigo + '</td>' +    // <td>: Define una celda de datos en una tabla.
+                                    '<td>' + producto.descripcion + '</td>' +
+                                    '<td align="right">' + producto.cantidad + '</td>' +
+                                    '<td align="right">' + producto.precio + '</td>' + // A continuacion Mostrar miniatura de la imagen (verificar que funciona)
+                                    '<td><img src=./static/imagenes/' + producto.imagen_url + ' alt="Imagen del producto" style="width: 100px;"></td>' +    //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere '<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto"...
+                                    '<td align="right">' + producto.proveedor + '</td>';
                     
-                    //Una vez que se crea la fila con el contenido del producto, se agrega a la tabla utilizando el método appendChild del elemento tablaProductos.
-                    tablaProductos.appendChild(fila);
+                    tablaProductos.appendChild(fila);   //Una vez que se crea la fila con el contenido del producto, se agrega a la tabla utilizando el método appendChild del elemento tablaProductos.
                 }
             })
-
             //Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
             .catch(function (error) {
                 // Código para manejar errores

@@ -52,7 +52,7 @@ class Catalogo:
         self.conn.commit()
         
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
-        self.cursor.close()
+        self.cursor.close()     # Cerramos el cursor inicial para abrir uno nuevo y que nos devuelva, una vez realizada la consulta, un diccionario en vez de una tupla
         self.cursor = self.conn.cursor(dictionary=True)
 
     def listar_productos(self):
@@ -102,6 +102,8 @@ class Catalogo:
         self.conn.commit()
         return self.cursor.rowcount > 0
 
+
+
 #--------------------------------------------------------------------
 # Cuerpo del programa
 #--------------------------------------------------------------------
@@ -109,7 +111,7 @@ class Catalogo:
 catalogo = Catalogo(host='localhost', user='root', password='', database='miapp') # Cuando hostiemos esto en pythonanywhere, nos va a dar el host, user y password, el database nosotros
 
 # Carpeta para guardar las imagenes
-ruta_destino = './static/imagenes/'
+ruta_destino = 'Codo_Codo\Proyecto Back Codo_Codo\etapa4\static\imagenes'
 
 @app.route("/productos", methods=["GET"])   # Definimos que /productos se ingrese como una request GET (Por Defecto)
 def listar_productos():
@@ -127,7 +129,7 @@ def mostrar_producto(codigo):
 @app.route("/productos", methods=["POST"])      # Agregar un nuevo producto
 def agregar_producto():
     #Recojo los datos del form
-    descripcion = request.form['descripcion']   # Recuperar los datos del formulario que estoy mandando
+    descripcion = request.form['descripcion']   # Recuperar los datos del formulario que estoy mandando en HTML
     cantidad = request.form['cantidad']         # Recuperame del formulario que me esta mandando el usuario a traves de la peticion POST, recuperame el valor cantidad
     precio = request.form['precio']
     imagen = request.files['imagen']
@@ -141,7 +143,7 @@ def agregar_producto():
 
     nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio, nombre_imagen, proveedor)
     if nuevo_codigo:    
-        imagen.save(os.path.join(ruta_destino, nombre_imagen))
+        imagen.save(os.path.join(ruta_destino, nombre_imagen))  # UNIR la ruta de destino con el nombre de la imagen == ./static/imagenes/teclado_123456789.png
         return jsonify({"mensaje": "Producto agregado correctamente.", "codigo": nuevo_codigo, "imagen": nombre_imagen}), 201
     else:
         return jsonify({"mensaje": "Error al agregar el producto."}), 500
@@ -212,4 +214,4 @@ if __name__ == "__main__":
 Método	Propósito	Idempotente	Seguro	Datos en URL/Cuerpo	Cacheable
 GET	    Obtener	    Sí	        Sí	    URL	                Sí
 POST	Crear	    No	        No	    Cuerpo	            No
-PUT	Actualizar	    Sí	        No	    Cuerpo	            No"""
+PUT	    Actualizar  Sí	        No	    Cuerpo	            No"""

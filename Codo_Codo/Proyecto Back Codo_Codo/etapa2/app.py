@@ -75,7 +75,7 @@ class Catalogo:
 # -------------------------------------------------------------------
 print("\033[H\033[J")  # Limpiamos la pantalla
 
-catalogo = Catalogo() # tienda de la calle cordoba
+catalogo = Catalogo() # cada catalogo es una tienda
 
 # Agregamos y consultamos productos
 catalogo.agregar_producto(1, 'Teclado USB 101 teclas', 10, 4500, 'teclado.jpg', 101)
