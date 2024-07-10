@@ -1,0 +1,164 @@
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 30px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: visible;
+}
+
+.navbar {
+    background-color: rgb(113, 79, 223);
+    height: 70px;
+    padding: 0 30px;
+}
+
+.navbar h1 {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+    color: white;
+}
+
+.navbar .flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    padding: 9px;
+    margin: 0 10px;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #c498ee;
+    border-bottom: 3px solid #9961cd;
+}
+
+.contact-form {
+    background-color: #ffffff93;
+    border-radius: 10px;
+    box-shadow: -7px -7px 20px rgba(113, 79, 223, 0.384),
+                7px  7px 20px rgba(113, 79, 223, 0.384);
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.contact-form h2 {
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact-form img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+}
+
+.contact-form table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+.contact-form td {
+    text-align: center;
+}
+
+.contact-form a {
+    display: block;
+    color: black;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600; /* Añadido para hacer las letras más gruesas */
+}
+
+.contact-form a:hover {
+    background-color: rgb(113, 79, 223);
+}
+
+footer {
+    background-color: rgb(113, 79, 223);
+    padding: 20px 10px;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #9867C5;
+    border-bottom: 2px solid rgb(152, 103, 197);
+}
+
+footer p {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+.profiles {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profiles a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.profiles i {
+    margin-right: 5px;
+}

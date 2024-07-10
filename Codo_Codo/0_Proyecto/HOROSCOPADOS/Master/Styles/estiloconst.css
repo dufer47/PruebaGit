@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+
+  
+  /* <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 700 */
+
+ .josefin-sans-uniquifier { 
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100px;
+  font-style: normal;
+ }
+  
+  body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 300px;
+  }
+  
+  /* Hacer todo el texto de los links negro y sin decoración*/
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+  
+  
+  h2 {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 30px;
+  }
+  
+  /* Remover el estilo a los elementos de una lista */
+  li {
+    list-style-type: none;
+  }
+  
+  h3 {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: justify;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: border-box;
+    overflow: visible;
+  }
+
+  .navbar {
+    background-color: rgb(113, 79, 223);
+    height: 70px;
+    padding: 0 30px;
+  }
+
+  /* Establece el tamaño de la fuente (font size), reduce el peso de las fuente (font-weight), agrega margen y alto de línea (line height) */
+
+  .navbar h1 {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+    color: white;
+  }
+
+  .navbar .flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navbar ul {
+    display: flex;
+  }
+  
+  /* Cambia el color de ambos enlaces a blanco, agrega padding entre si y margen también */
+  
+  .navbar a {
+    color: white;
+    padding: 9px;
+    margin: 0 10px;
+  }
+
+  .navbar a:hover {
+    color: #c498ee;
+    border-bottom: 3px solid #9961cd;
+  }
+
+  .linea1 {
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 80px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 700px 700px;
+    grid-gap: 50px;
+    padding: auto;
+    justify-content: center;
+    margin: 60px;
+  }
+
+  .grid img {
+    width: 700px;
+  }
+
+  iframe {
+    border: 1px solid black;
+    width: 60%; 
+  }
+
+  .mapa iframe {
+    width: 75%;
+    margin: 0 auto;
+    border: none;
+    background:  rgb(113, 79, 223);
+    display: block;
+  }
+
+  footer {
+    background-color: rgb(113, 79, 223);
+    padding: 20px 10px;
+  }
+  
+  /* cambia los links de texto a blanco y le pone margen */
+  
+  footer a {
+    color: white;
+    margin: 0 10px;
+  }
+
+  footer a:hover {
+    color: #9867C5;
+    border-bottom: 2px solid #9867C5;
+  }
+
+  footer p {
+    color: white;
+  }
+
+  .profiles {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+      }
+  
+      .grid img {
+        width: 500px;
+      }
+    }
+
+     /* Dispositivos móviles */
+@media only screen and (max-width: 500px) {
+    .navbar {
+      height: 100px;
+    }
+    /* Cambia la alineación. El logo del título se queda en la parte superior, los enlaces de navegación ahora se muestran debajo*/
+
+    .navbar .flex {
+    flex-direction: column;
+  }
+
+  /* Cuando pasamos encima el mouse, retienen el texto blanco y cambia el borde a negro */
+
+    .navbar a:hover {
+    color: white;
+    border-bottom: 2px solid black;
+  }
+
+/* Establecer el color púrpura para el fondo de los enlaces de navegación, redondear las esquinas de los bordes y darle algo de espaciado*/
+
+    .navbar ul {
+      background: #9867C5;
+      border-radius: 5px;
+      padding: 10px 0;
+    }
+
+    .grid img {
+      width: 395px;
+    }
+  }
+  
