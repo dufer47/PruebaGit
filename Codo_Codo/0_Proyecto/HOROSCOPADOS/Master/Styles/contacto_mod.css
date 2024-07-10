@@ -1,0 +1,81 @@
+/* Estilos generales */
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el contenedor principal */
+#app {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Estilos para la imagen de logo */
+.logo-centrado img {
+    max-width: 100%; /* Ajusta la imagen al ancho máximo del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    display: block; /* Elimina el espacio extra por defecto debajo de la imagen */
+    margin: 0 auto 20px; /* Centra la imagen y agrega margen inferior */
+}
+
+/* Estilos para los formularios dentro del contenedor */
+form {
+    margin-bottom: 20px;
+}
+
+/* Estilos para los títulos de los formularios */
+form h1,
+form h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilos para los campos de entrada */
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px); /* Ancho del 100% menos el padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para los botones */
+button,
+a {
+    display: inline-block;
+    background-color: rgb(113, 79, 223);
+    color: white;
+    padding: 8px 16px; /* Ajuste de padding más pequeño */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    font-weight: 600;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+}
+
+button:hover,
+a:hover {
+    background-color: #6d4fb2; /* Color de fondo al pasar el cursor */
+}
