@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altas</title>
+    <link rel="icon" type="image/x-icon" href="Imagenes/astrologia.png">
+    <link rel="stylesheet" href="./Styles/inscriptos_altas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-centrado">
+            <img src="Imagenes/horoscopo1.jpg" alt="Contacto" class="contact-image">
+        </div>
+        <h1>Alta de inscripto</h1>
+
+        <!--enctype="multipart/form-data" es necesario para enviar archivos al back. Se usa este para enviar datos y archivos -->
+        <form id="formulario" enctype="multipart/form-data">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="\d+" title="Debe contener solo números" required><br>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje"></textarea><br>
+
+            <button type="submit">Agregar inscripto al registro</button>
+            <a href="contacto_index.html">Menu principal</a>
+        </form>
+    </div>
+    <script>
+
+        const URL = "http://horoscopados2024.pythonanywhere.com/"
+
+        //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+        //const URL = "https://USUARIO.pythonanywhere.com/"
+
+
+        // Capturamos el evento de envío del formulario
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitamos que se envie el form. Por defecto el formulario tiene un action, con esta linea de codigo hacemos que realice lo que nosotros querramos.
+
+            var formData = new FormData(this);  // Nuevo objeto FormData. (this) es lo que tenemos en 'formulario'. En formData tenemos todos los datos del formulario.
+
+            // Realizamos la solicitud POST al servidor
+            fetch(URL + 'inscriptos', { // fetcheamos a la URL con el método POST (usamos la variable URL definida antes para poder colocar despues solo el nombre del decorador de la ruta en el servidor, en este caso inscriptos)
+                method: 'POST',
+                body: formData // Aquí enviamos formData, en el body pasamos el formData. Dado que formData puede contener archivos, no se utiliza JSON.
+            })
+                .then(function (response) {     //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor. Me fijo si tengo respuesta.
+                        if (response.ok) {  // Si respuesta ok...
+                        //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                            return response.json();
+                        } else {    // Sino...
+                        // Si hubo un error, lanzar explícitamente una excepción
+                        // para ser "catcheada" más adelante
+                            throw new Error('Error al agregar el inscripto.');
+                        }
+                })
+                .then(function (data) {     //Respuesta OK, muestra una alerta informando que el inscripto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo inscripto.
+                    alert('inscripto agregado correctamente.');
+                })
+
+                .catch(function (error) {   // En caso de error, mostramos una alerta con un mensaje de error.
+                    alert('Error al agregar el inscripto.');
+                })
+
+                .finally(function () {      // Se ejecuta siempre dsp cuando la promesa fue ejecutada y cuando toda la cadena de promesas fue ejecutada con errores o sin errores. Limpiar el formulario en ambos casos (éxito o error)
+                    document.getElementById('nombre').value = "";
+                    document.getElementById('email').value = "";
+                    document.getElementById('telefono').value = "";
+                    document.getElementById('mensaje').value = "";
+                });
+        })
+        // Función para filtrar solo números en el campo de teléfono
+        document.getElementById('telefono').addEventListener('input', function(event) {
+            this.value = this.value.replace(/[^\d]/g, ''); // Filtra cualquier carácter que no sea un dígito
+        });
+    </script>
+</body>
+
+</html>

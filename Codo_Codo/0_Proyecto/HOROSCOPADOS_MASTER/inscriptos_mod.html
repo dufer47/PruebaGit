@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar inscripto</title>
+    <link rel="icon" type="image/x-icon" href="Imagenes/astrologia.png">
+    <link rel="stylesheet" href="./Styles/inscriptos_mod.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo-centrado">
+        <img src="Imagenes/horoscopo1.jpg" alt="Contacto" class="contact-image">
+    </div>
+
+    <!-- Contenedor principal que será controlado por JavaScript. Este contenedor tendrá dos formularios. -->
+    <div id="app">
+        <!-- Primer formulario: Selector de inscripto. LLama a la función obtenerinscriptos cuando se envíe el formulario -->
+        <form id="form-obtener-inscripto">
+            <h1>Modificar inscripto del registro</h1>
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" required><br>
+            <button type="submit">Modificar inscripto</button>
+            <a href="contacto_index.html">Menu principal</a>
+        </form>
+
+        <!-- Segundo formulario: se muestra solo si mostrarDatosinscripto es verdadero. Llama a la función guardarCambios -->
+        <div id="datos-inscripto" style="display: none;">
+            <h2>Datos del inscripto</h2>
+            <form id="form-guardar-cambios">
+                <label for="nombreModificar">Nombre:</label>
+                <input type="text" id="nombreModificar" required><br>
+
+                <label for="emailModificar">Email:</label>
+                <input type="email" id="emailModificar" required><br>
+
+                <label for="telefonoModificar">Teléfono:</label>
+                <input type="tel" id="telefonoModificar" pattern="\d+" title="Debe contener solo números" required><br>
+
+                <label for="mensajeModificar">Mensaje:</label>
+                <textarea id="mensajeModificar" required></textarea><br>
+
+                <button type="submit">Guardar Cambios</button>
+                <a href="inscriptos_mod.html">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        const URL = "http://horoscopados2024.pythonanywhere.com/";
+
+        // Variables de estado para controlar la visibilidad y los datos del formulario
+        let codigo = '';
+        let nombre = '';
+        let email = '';
+        let telefono = '';
+        let mensaje = '';
+        let mostrarDatosinscripto = false;
+
+        document.getElementById('form-obtener-inscripto').addEventListener('submit', obtenerinscripto);
+        document.getElementById('form-guardar-cambios').addEventListener('submit', guardarCambios);
+
+        // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del inscripto correspondiente al código ingresado.
+        function obtenerinscripto(event) {
+            event.preventDefault();
+            codigo = document.getElementById('codigo').value;
+            fetch(URL + 'inscriptos/' + codigo)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al obtener los datos del inscripto.')
+                    }
+                })
+                .then(data => {
+                    nombre = data.nombre;
+                    email = data.email;
+                    telefono = data.telefono;
+                    mensaje = data.mensaje;
+                    mostrarDatosinscripto = true; //Activa la vista del segundo formulario
+                    mostrarFormulario();
+                })
+                .catch(error => {
+                    alert('Código no encontrado.');
+                });
+        }
+
+        // Muestra el formulario con los datos del inscripto
+        function mostrarFormulario() {
+            if (mostrarDatosinscripto) {
+                document.getElementById('nombreModificar').value = nombre;
+                document.getElementById('emailModificar').value = email;
+                document.getElementById('telefonoModificar').value = telefono;
+                document.getElementById('mensajeModificar').value = mensaje;
+
+                document.getElementById('datos-inscripto').style.display = 'block';
+            } else {
+                document.getElementById('datos-inscripto').style.display = 'none';
+            }
+        }
+
+        // Se usa para enviar los datos modificados del inscripto al servidor.
+        function guardarCambios(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('codigo', codigo);
+            formData.append('nombre', document.getElementById('nombreModificar').value);
+            formData.append('email', document.getElementById('emailModificar').value);
+            formData.append('telefono', document.getElementById('telefonoModificar').value);
+            formData.append('mensaje', document.getElementById('mensajeModificar').value);
+
+            fetch(URL + 'inscriptos/' + codigo, {
+                method: 'PUT',
+                body: formData,
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al guardar los cambios del inscripto.')
+                    }
+                })
+                .then(data => {
+                    alert('Inscripto actualizado correctamente.');
+                    limpiarFormulario();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al actualizar el inscripto.');
+                });
+        }
+
+        // Restablece todas las variables relacionadas con el formulario a sus valores iniciales, lo que efectivamente "limpia" el formulario.
+        function limpiarFormulario() {
+            document.getElementById('codigo').value = '';
+            document.getElementById('nombreModificar').value = '';
+            document.getElementById('emailModificar').value = '';
+            document.getElementById('telefonoModificar').value = '';
+            document.getElementById('mensajeModificar').value = '';
+
+            codigo = '';
+            nombre = '';
+            email = '';
+            telefono = '';
+            mensaje = '';
+            mostrarDatosinscripto = false;
+
+            document.getElementById('datos-inscripto').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

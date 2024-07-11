@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de inscriptos</title>
+    <link rel="icon" type="image/x-icon" href="Imagenes/astrologia.png">
+    <link rel="stylesheet" href="./Styles/inscriptos_listar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-centrado">
+            <img src="Imagenes/horoscopo1.jpg" alt="Contacto" class="contact-image">
+        </div>
+        <h1>Listado de inscriptos</h1><br>
+
+        <table> <!-- Se crea una tabla para mostrar el registro. -->
+            <thead> <!--Encabezado de la tabla con columnas para código, nombre, email, telefono y mensaje.-->
+                <tr>        <!-- <tr>: Define una fila dentro de la tabla. -->
+                    <th>Código</th>     <!-- <th>: Define una celda de encabezado en una tabla, que normalmente aparece en negrita y centrada. -->
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Mensaje</th>
+                </tr>
+            </thead>
+            <tbody id="tablainscriptos"> </tbody>
+        </table><br>
+
+        <div class="contenedor-centrado">
+            <a href="contacto_index.html">Menu principal</a>
+        </div>
+    </div>
+    <script>
+        const URL = "http://horoscopados2024.pythonanywhere.com/"    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere. const URL = "https://USUARIO.pythonanywhere.com/"
+        
+        // Realizamos la solicitud GET al servidor para obtener todos los inscriptos.
+        fetch(URL + 'inscriptos')    // Concatena http://127.0.0.1:5000/inscriptos (devuelve el json de los inscriptos). fetch es asincronia, hablamos de asincronía, promesas. Anda buscar a la API, mientras tanto mostrame toda la pagina, cuando la API venga hacemos los cambios (asincronia (fetch)).
+            .then(function (response) { // ver en promesas.js
+                if (response.ok) {  // Si la respuesta es ok (status 200 OK)...
+                    //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
+                    return response.json(); 
+            } else {
+                    // Si hubo un error, lanzar explícitamente una excepción para ser "catcheada" más adelante
+                    throw new Error('Error al obtener los inscriptos.');
+                }
+            })
+
+            //Esta función maneja los datos convertidos del JSON.
+            .then(function (data) { // Si consigos los datos dsp del ok...
+                let tablainscriptos = document.getElementById('tablainscriptos'); //Selecciona el elemento del DOM donde se mostrarán los inscriptos. Armamos la tabla en HTML. getElementById('tablaInscritos') apuntamos a la tablaInscritos creada anteriormente.
+
+                // Iteramos sobre cada inscripto y agregamos filas a la tabla
+                for (let inscripto of data) {
+                    let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada inscripto.
+                    fila.innerHTML ='<td>' + inscripto.codigo + '</td>' +    // <td>: Define una celda de datos en una tabla.
+                                    '<td>' + inscripto.nombre + '</td>' +
+                                    '<td align="right">' + inscripto.email + '</td>' +
+                                    '<td align="right">' + inscripto.telefono + '</td>' + // A continuacion Mostrar miniatura de la imagen (verificar que funciona)
+                                    '<td align="right">' + inscripto.mensaje + '</td>';
+                    tablainscriptos.appendChild(fila);   //Una vez que se crea la fila con el contenido del inscripto, se agrega a la tabla utilizando el método appendChild del elemento tablaInscritos.
+                }
+            })
+            //Captura y maneja errores, mostrando una alerta en caso de error al obtener los inscriptoss.
+            .catch(function (error) {
+                // Código para manejar errores
+                alert('Error al obtener los inscriptos.');
+            });
+    </script>
+</body>
+</html>

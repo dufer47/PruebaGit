@@ -1,0 +1,259 @@
+/*en realidad este css se puede combinar con el otro, pero se haria muy largo y denso, por eso lo hice aparte
+aunque como se vera, tienen lo mismo en las partes que se repiten*/ 
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+  
+  /* <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 700 */
+
+ .josefin-sans-uniquifier { 
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100px;
+  font-style: normal;
+ }
+  
+  body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  
+  /* Hacer todo el texto de los links negro y sin decoración*/
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .titulo h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0;
+    padding-top: 80px;
+    line-height: 1.2;
+    text-decoration: underline;
+  }
+  
+  
+  h2 {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 30px;
+  }
+  
+  /* Remover el estilo a los elementos de una lista */
+  li {
+    list-style-type: none;
+  }
+  
+  h3 {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: justify;
+  }
+
+ .navbar h1 {
+    color: white;
+  }
+  
+  .linea1 {
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 80px;
+  }
+
+/* Centra el elemento y establece un ancho máximo y se asegura que los elementos puedan fluir a través*/
+
+.container {
+    margin: 0 auto;
+    max-width: border-box;
+    overflow: visible;
+  }
+
+  .navbar {
+    background-color: rgb(113, 79, 223);
+    height: 70px;
+    padding: 0 30px;
+  }
+
+  /* Establece el tamaño de la fuente (font size), reduce el peso de las fuente (font-weight), agrega margen y alto de línea (line height) */
+
+.navbar h1 {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+
+  .navbar .flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+
+  .navbar ul {
+    display: flex;
+  }
+  
+  /* Cambia el color de ambos enlaces a blanco, agrega padding entre si y margen también */
+  
+  .navbar a {
+    color: white;
+    padding: 9px;
+    margin: 0 10px;
+  }
+
+  .navbar a:hover {
+    color: #c498ee;
+    border-bottom: 3px solid #9961cd;
+  }
+
+  img {
+    width: 80px;
+    display: block;
+    margin: auto;
+    padding: 3px;
+  }
+
+  .grid-container {
+    width: 400px;
+    display: grid;
+    grid-template-columns: 400px 400px 400px 400px;
+    grid-gap: 60px;
+    padding: auto;
+    justify-content:space-between;
+    margin: 60px;
+   }
+
+   .card {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -7px -7px 20px rgba(0, 0, 0, 0.2),
+                 7px  7px 20px rgba(0, 0, 0, 0.2)
+  }
+
+  .circle h3 {
+      color: black;
+      text-align: center;
+      padding: 10px;
+
+  }
+
+   .grid-container a {
+    color: rgb(13, 13, 13);
+    padding: 9px;
+    margin: 0 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .grid-container a:hover {
+    color: #c498ee;
+    border-bottom: 3px solid #9961cd;
+  }
+
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: 500px 800px;
+    grid-gap: 50px;
+    padding: auto;
+    justify-content: center;
+    margin: 60px;
+  }
+
+  .grid-container2 img {
+    width: 500px;
+
+  }
+
+   footer {
+    background-color: rgb(113, 79, 223);
+    padding: 20px 10px;
+  }
+  
+  /* cambia los links de texto a blanco y le pone margen */
+  
+  footer a {
+    color: white;
+    margin: 0 10px;
+  }
+
+  footer a:hover {
+    color: #9867C5;
+    border-bottom: 2px solid #9867C5;
+  }
+
+  footer p {
+    color: white;
+  }
+
+  .profiles {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media only screen and (max-width: 850px) {
+    .grid-container,
+    .grid-container2 {
+      grid-template-columns: 1fr;
+      grid-area: auto;
+    }
+
+    .grid-container2 img {
+      width: 300px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .navbar {
+      height: 100px;
+    }
+    .navbar .flex {
+      flex-direction: column;
+    }
+    .navbar a:hover {
+      color: white;
+      border-bottom: 2px solid black;
+    }
+
+    .navbar ul {
+      background: #9867C5;
+      border-radius: 5px;
+      padding: 10px 0;
+    }
+    
+    .grid-container {
+      width: 300px;
+      align-content: center;
+    }
+
+    .grid-container2 img{
+      width: 250px;
+    }
+  }

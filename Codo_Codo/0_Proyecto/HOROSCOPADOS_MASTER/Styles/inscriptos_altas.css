@@ -1,0 +1,90 @@
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #ffffff93; /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+    box-shadow: -7px -7px 20px rgba(113, 79, 223, 0.384),
+                7px  7px 20px rgba(113, 79, 223, 0.384); /* Sombra igual que en el primer CSS */
+    padding: 20px;
+    max-width: 600px; /* Aumentar el ancho del contenedor */
+    margin: 20px auto;
+    text-align: center; /* Centrar contenido dentro del contenedor */
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.logo-centrado {
+    margin-bottom: 20px;
+}
+
+.logo-centrado img {
+    max-width: 300px; /* Aumentar el tamaño de la imagen */
+    height: auto; /* Mantener la proporción */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-align: left; /* Alinear etiquetas a la izquierda */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="tel"] {
+    width: calc(100% - 22px); /* Ajustar el ancho de todos los campos */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box; /* Asegurar que el padding se incluya en el ancho total */
+}
+
+form button,
+.menu-principal {
+    display: block; /* Convertir los botones en bloque para ocupar todo el ancho disponible */
+    background-color: rgb(113, 79, 223);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Espacio inferior entre el botón y el siguiente elemento */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form button:hover,
+.menu-principal:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../Imagenes/Constelacion-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff93; /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+    box-shadow: -7px -7px 20px rgba(113, 79, 223, 0.384),
+                7px  7px 20px rgba(113, 79, 223, 0.384); /* Sombra igual que en el primer CSS */
+    padding: 20px;
+}
+
+/* Estilos del título principal */
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Centrar logo */
+.logo-centrado {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Imagen del logo */
+.logo-centrado img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+/* Estilos para encabezados de la tabla */
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: rgb(113, 79, 223);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+td {
+    background-color: #ffffff93;
+}
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para contenedor centrado */
+.contenedor-centrado {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Estilos para los enlaces dentro del contenedor centrado */
+.contenedor-centrado a {
+    display: inline-block;
+    background-color: rgb(113, 79, 223);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contenedor-centrado a:hover {
+    background-color: #6d4fb2;
+}
